@@ -1,13 +1,16 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const steps = [
-  { num: "01", title: "Connect the sources" },
-  { num: "02", title: "Define the truth" },
-  { num: "03", title: "Surface the signal" },
-  { num: "04", title: "Automate the response" },
+  { num: "01", title: "Connect the sources", image: "/images/datalift-approach-process.webp" },
+  { num: "02", title: "Define the truth", image: "/images/datalift-approach-understand.webp" },
+  { num: "03", title: "Surface the signal", image: "/images/datalift-insight-data-insight.webp" },
+  { num: "04", title: "Automate the response", image: "/images/datalift-insight-workflow-automation.webp" },
 ];
 
 export default function FeatureSection() {
   return (
-    <section className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+    <section className="section-content py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -21,9 +24,20 @@ export default function FeatureSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {steps.map((step) => (
-            <div key={step.num} className="rounded-2xl border border-border p-4 bg-white">
-              <p className="text-xs text-secondary">{step.num}</p>
-              <p className="mt-1 font-medium">{step.title}</p>
+            <div key={step.num} className="rounded-2xl border border-border bg-white overflow-hidden">
+              <div className="relative h-28 w-full overflow-hidden bg-background">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-xs text-secondary">{step.num}</p>
+                <p className="mt-1 font-medium">{step.title}</p>
+              </div>
             </div>
           ))}
         </div>

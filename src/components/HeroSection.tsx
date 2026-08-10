@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Boxes } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import SectionLabel from "@/components/SectionLabel";
 import PrimaryButton from "@/components/PrimaryButton";
 
@@ -57,33 +58,15 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="order-1 lg:order-2"
         >
-          <div className="relative rounded-3xl border border-border bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-2 text-xs text-secondary">
-              <Boxes className="h-4 w-4" aria-hidden />
-              System map
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4 text-xs text-secondary">
-              {["CRM", "Sales", "Calls", "Payments", "Marketing", "Reporting"].map(
-                (node) => (
-                  <div
-                    key={node}
-                    className="rounded-2xl border border-border p-3 bg-background"
-                  >
-                    <span className="inline-block h-2 w-2 rounded-full bg-[#B8F36B]" />
-                    <span className="ml-2">{node}</span>
-                  </div>
-                )
-              )}
-            </div>
-            <div className="mt-4 rounded-2xl border border-border p-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-block h-2 w-2 rounded-full bg-[#B8F36B]" />
-                <span className="text-sm font-medium">Datalift</span>
-              </div>
-              <p className="mt-1 text-xs text-secondary">
-                Connected data layer for your business.
-              </p>
-            </div>
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-white p-2 shadow-sm">
+            <Image
+              src="/images/datalift-hero-system-map.webp"
+              alt="Abstract system map showing CRM, Sales, Calls, Payments, Marketing and Reporting connected through one data layer"
+              width={1200}
+              height={675}
+              className="h-auto w-full rounded-2xl"
+              priority
+            />
           </div>
         </motion.div>
       </div>

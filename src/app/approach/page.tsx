@@ -1,10 +1,19 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "A Practical Data Systems Approach",
   description:
     "Learn how Datalift moves from messy data and manual processes to reliable reporting, useful automation and measurable operational improvement.",
 };
+
+const steps = [
+  { title: "Understand", image: "/images/datalift-approach-understand.webp" },
+  { title: "Define", image: "/images/datalift-approach-define.webp" },
+  { title: "Connect", image: "/images/datalift-approach-connect.webp" },
+  { title: "Build", image: "/images/datalift-approach-build.webp" },
+  { title: "Improve", image: "/images/datalift-approach-improve.webp" },
+];
 
 const principles = [
   "Clarity before complexity.",
@@ -36,7 +45,7 @@ const faqs = [
 
 export default function ApproachPage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+    <div className="section-content py-20">
       <div className="mb-10">
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">Start with the decision, then build the system.</h1>
         <p className="mt-4 text-secondary text-lg leading-relaxed max-w-2xl">
@@ -44,18 +53,26 @@ export default function ApproachPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <div key={i} className="rounded-2xl border border-border p-4 bg-white">
-            <p className="text-xs text-secondary">0{i + 1}</p>
-            <p className="mt-1 font-medium">
-              {["Understand", "Define", "Connect", "Build", "Improve"][i]}
-            </p>
-          </div>
-        ))}
+      <div className="rounded-2xl border border-border bg-white overflow-hidden mb-16">
+        <div className="relative w-full h-64 md:h-80">
+          <Image
+            src="/images/datalift-approach-process.webp"
+            alt="Five-step data systems process"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
+          {steps.map((step) => (
+            <div key={step.title} className="text-center">
+              <p className="text-xs text-secondary uppercase tracking-widest">{step.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight">Principles</h2>
           <ul className="mt-4 space-y-2 text-sm text-secondary list-disc list-inside">
