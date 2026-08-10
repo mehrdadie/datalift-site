@@ -1,6 +1,7 @@
-import { Metadata } from "next";
 import Link from "next/link";
+import SectionLabel from "@/components/SectionLabel";
 import { ArrowLeft } from "lucide-react";
+import PrimaryButton from "@/components/PrimaryButton";
 import { caseStudies } from "@/content/case-studies";
 
 export function generateStaticParams() {
@@ -13,6 +14,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: item.title,
     description: item.summary,
+    alternates: {
+      canonical: `/work/${params.slug}`,
+    },
   };
 }
 
@@ -21,9 +25,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
   if (!item) {
     return (
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+      <div className="section-content py-20">
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">Case study not found</h1>
-        <Link href="/work" className="mt-4 inline-flex items-center gap-2 text-sm font-medium">
+        <Link href="/work" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-foreground transition-colors">
           <ArrowLeft className="h-4 w-4" aria-hidden />
           Back to work
         </Link>
@@ -32,14 +36,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   }
 
   return (
-    <article className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+    <article className="section-content py-20">
       <Link href="/work" className="inline-flex items-center gap-2 text-sm text-secondary hover:text-foreground transition-colors">
         <ArrowLeft className="h-4 w-4" aria-hidden />
         Back to work
       </Link>
 
       <header className="mt-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-secondary">{item.eyebrow}</p>
+        <SectionLabel>{item.eyebrow}</SectionLabel>
         <h1 className="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">{item.title}</h1>
         <p className="mt-4 text-secondary text-lg leading-relaxed max-w-2xl">{item.summary}</p>
       </header>
@@ -99,13 +103,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
       <div className="mt-16 rounded-3xl border border-border bg-white p-8 md:p-12">
         <p className="text-xl font-semibold tracking-tight">Build a clearer version of your operation.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-medium text-background hover:bg-secondary transition-colors"
-        >
+        <PrimaryButton href="/contact" className="mt-4">
           Start a conversation
-          <ArrowLeft className="h-4 w-4" aria-hidden />
-        </Link>
+        </PrimaryButton>
       </div>
     </article>
   );

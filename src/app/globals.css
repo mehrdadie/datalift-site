@@ -38,3 +38,23 @@ body {
   background-color: #B8F36B;
   color: #111111;
 }
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure full-width backgrounds while keeping content aligned */
+.section-full {
+  width: 100%;
+}
+.section-content {
+  @apply mx-auto max-w-7xl px-6 lg:px-8;
+}

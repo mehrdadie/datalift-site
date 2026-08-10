@@ -3,20 +3,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Boxes } from "lucide-react";
+import SectionLabel from "@/components/SectionLabel";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default function HeroSection() {
   return (
-    <section aria-labelledby="hero-headline" className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section aria-labelledby="hero-headline" className="section-content pt-20 pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div className="order-2 lg:order-1">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-xs font-semibold uppercase tracking-widest text-secondary"
-          >
-            Data systems for businesses in motion
-          </motion.p>
+          <SectionLabel>Data systems for businesses in motion</SectionLabel>
 
           <motion.h1
             id="hero-headline"
@@ -45,12 +40,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <Link
-              href="/contact"
-              className="inline-flex h-11 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background hover:bg-secondary transition-colors"
-            >
-              Start a conversation
-            </Link>
+            <PrimaryButton href="/contact">Start a conversation</PrimaryButton>
             <Link
               href="/approach"
               className="inline-flex h-11 items-center gap-2 rounded-full border border-border px-5 text-sm font-medium hover:border-foreground transition-colors"

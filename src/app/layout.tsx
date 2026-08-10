@@ -24,11 +24,14 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: `${site.name} — Make your data work harder.`,
     description: site.description,
     type: "website",
-    locale: "en_US",
+    url: site.url,
     siteName: site.name,
   },
   twitter: {
