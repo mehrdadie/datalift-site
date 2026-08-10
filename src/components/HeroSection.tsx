@@ -4,67 +4,73 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import SectionLabel from "@/components/SectionLabel";
-import PrimaryButton from "@/components/PrimaryButton";
 
 export default function HeroSection() {
   return (
-    <section aria-labelledby="hero-headline" className="section-content pt-20 pb-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div className="order-2 lg:order-1">
-          <SectionLabel>Data systems for businesses in motion</SectionLabel>
+    <section aria-labelledby="hero-headline" className="section-content pt-16 pb-24 md:pt-24 md:pb-32">
+      <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary"
+          >
+            AI · Data · Automation
+          </motion.p>
 
           <motion.h1
             id="hero-headline"
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1]"
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="mt-6 max-w-5xl text-[clamp(3.4rem,8vw,7.4rem)] font-semibold leading-[0.92] tracking-[-0.055em]"
           >
-            Make your data work harder.
+            Make the work behind your business work better.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-5 text-lg text-secondary leading-relaxed max-w-xl"
-          >
-            Datalift connects the systems behind your business, turns scattered
-            information into a clear operating picture and automates the work
-            that slows your team down.
-          </motion.p>
-
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-8 flex flex-wrap gap-3"
+            transition={{ duration: 0.55, delay: 0.16 }}
+            className="mt-10 grid max-w-4xl gap-8 md:grid-cols-[1fr_auto] md:items-end"
           >
-            <PrimaryButton href="/contact">Start a conversation</PrimaryButton>
-            <Link
-              href="/approach"
-              className="inline-flex h-11 items-center gap-2 rounded-full border border-border px-5 text-sm font-medium hover:border-foreground transition-colors"
-            >
-              See how we work
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
+            <p className="max-w-2xl text-lg leading-relaxed text-secondary md:text-xl">
+              Datalift connects your systems, turns messy operational data into a clear picture,
+              and automates the repetitive work that slows teams down.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-foreground px-6 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+              >
+                Start a conversation
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link
+                href="/work"
+                className="inline-flex h-12 items-center rounded-full border border-border bg-white px-6 text-sm font-medium transition-colors hover:border-foreground"
+              >
+                See the work
+              </Link>
+            </div>
           </motion.div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="order-1 lg:order-2"
+          initial={{ opacity: 0, y: 22, scale: 0.985 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="lg:translate-y-8"
         >
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-white p-2 shadow-sm">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white p-2 shadow-[0_20px_70px_rgba(17,17,17,0.07)]">
             <Image
               src="/images/datalift-hero-system-map.webp"
-              alt="Abstract system map showing CRM, Sales, Calls, Payments, Marketing and Reporting connected through one data layer"
+              alt="A connected Datalift system linking business data, calls, CRM, payments, marketing and reporting"
               width={1200}
               height={675}
-              className="h-auto w-full rounded-2xl"
+              className="h-auto w-full rounded-[1.6rem]"
               priority
             />
           </div>
