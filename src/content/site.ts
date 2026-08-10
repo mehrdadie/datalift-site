@@ -41,10 +41,7 @@ export const site = {
   cta: "Start a conversation",
   secondaryCta: "See how we work",
   stats: [
-    { label: "Orgs Served", value: "250+" },
-    { label: "Hours Saved", value: "100,000+" },
-    { label: "Highest Client ROI", value: "50x" },
-    { label: "Workflows Delivered", value: "1,550+" },
+    { label: "Built around the systems your team already uses.", value: "" },
   ],
   trust: ["CRM", "Marketing", "Sales", "Calls", "Payments", "Reporting"],
 } as const;

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { site } from "@/content/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { site } from "@/content/site";
+import JsonLd from "@/components/JsonLd";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +34,20 @@ export const metadata: Metadata = {
     type: "website",
     url: site.url,
     siteName: site.name,
+    images: [
+      {
+        url: `${site.url}/images/datalift-social-preview.png`,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — Make your data work harder.`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — Make your data work harder.`,
     description: site.description,
+    images: [`${site.url}/images/datalift-social-preview.png`],
   },
   robots: {
     index: true,
@@ -59,6 +69,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <JsonLd />
         <SiteHeader />
         <main className="min-h-[60vh]">{children}</main>
         <SiteFooter />
