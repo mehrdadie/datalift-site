@@ -3,58 +3,46 @@ import { footerLinks } from "@/content/site";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="font-semibold tracking-tight">
-              Datalift
-            </Link>
-            <p className="mt-3 text-sm text-secondary max-w-xs">
-              Data should make the next decision easier.
+    <footer className="mt-10 border-t border-border bg-white">
+      <div className="section-content py-12 sm:py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.25fr_.75fr]">
+          <div>
+            <Link href="/" className="text-sm font-bold uppercase tracking-[0.18em]">Datalift</Link>
+            <p className="mt-6 max-w-[13ch] text-4xl font-semibold leading-[1] tracking-[-0.05em] sm:text-5xl">
+              Data should make the next move easier.
             </p>
           </div>
 
-          <div>
-            <p className="text-sm font-medium">Navigation</p>
-            <ul className="mt-3 space-y-2 text-sm text-secondary">
-              {footerLinks.slice(0, 6).map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="hover:text-foreground transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm font-medium">Legal</p>
-            <ul className="mt-3 space-y-2 text-sm text-secondary">
-              {footerLinks.slice(6).map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="hover:text-foreground transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm font-medium">Social</p>
-            <ul className="mt-3 space-y-2 text-sm text-secondary">
-              <li>
-                <Link href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">
-                  LinkedIn
-                </Link>
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <div>
+              <p className="eyebrow">Explore</p>
+              <ul className="mt-5 space-y-3 text-sm">
+                {footerLinks.slice(0, 4).map((item) => (
+                  <li key={item.href}><Link href={item.href} className="text-secondary transition-colors hover:text-foreground">{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="eyebrow">More</p>
+              <ul className="mt-5 space-y-3 text-sm">
+                {footerLinks.slice(4, 8).map((item) => (
+                  <li key={item.href}><Link href={item.href} className="text-secondary transition-colors hover:text-foreground">{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="eyebrow">Connect</p>
+              <ul className="mt-5 space-y-3 text-sm text-secondary">
+                <li><Link href="/contact" className="transition-colors hover:text-foreground">Start a conversation</Link></li>
+                <li><Link href="https://linkedin.com" target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">LinkedIn</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 text-xs text-secondary">
-          © {new Date().getFullYear()} Datalift. All rights reserved.
+        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-6 text-xs text-secondary sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Datalift. All rights reserved.</span>
+          <span>AI · Data · Automation</span>
         </div>
       </div>
     </footer>
