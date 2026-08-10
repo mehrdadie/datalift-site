@@ -4,7 +4,6 @@ import StatsStrip from "@/components/StatsStrip";
 import ProblemSection from "@/components/ProblemSection";
 import ServicePreview from "@/components/ServicePreview";
 import FeatureSection from "@/components/FeatureSection";
-import CaseStudyTeaser from "@/components/CaseStudyTeaser";
 import CtaSection from "@/components/CtaSection";
 import SectionLabel from "@/components/SectionLabel";
 import PrimaryButton from "@/components/PrimaryButton";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <ProblemSection />
       <ServicePreview />
       <FeatureSection />
-      <CaseStudyTeaser />
       <CtaSection />
 
       <section className="section-full border-t border-border bg-white">
