@@ -3,75 +3,56 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Data foundations",
-    body: "Make your data consistent, structured and ready to use.",
-    image: "/images/datalift-service-data-foundations.webp",
-  },
-  {
-    title: "Reporting systems",
-    body: "Replace scattered reports with one clear operating view.",
+    eyebrow: "01 · Data",
+    title: "One reliable operating picture",
+    body: "We connect scattered sources, define the business logic and turn reporting into something teams can actually trust.",
     image: "/images/datalift-service-reporting.webp",
   },
   {
-    title: "Workflow automation",
-    body: "Remove repetitive work between the tools your team relies on.",
+    eyebrow: "02 · Automation",
+    title: "Workflows that move without chasing",
+    body: "We automate repetitive handoffs, validation, alerts and updates across the tools your team already uses.",
     image: "/images/datalift-service-automation.webp",
   },
   {
-    title: "AI intelligence",
-    body: "Turn calls, messages and operational data into useful insight.",
+    eyebrow: "03 · AI",
+    title: "Intelligence inside the process",
+    body: "We use AI where it creates leverage: understanding calls and messages, summarising activity and helping teams act on signals faster.",
     image: "/images/datalift-service-ai.webp",
-  },
-  {
-    title: "Sales and CRM operations",
-    body: "We help sales teams create cleaner definitions, more useful activity views and better operational follow-through.",
-    image: "/images/datalift-insight-crm-operations.webp",
-  },
-  {
-    title: "Subscription and revenue intelligence",
-    body: "We connect billing and payment data so active, new, lost, renewal and cancellation movements can be monitored with confidence.",
-    image: "/images/datalift-insight-subscription-reconcile.webp",
   },
 ];
 
 export default function ServicePreview() {
   return (
-    <section className="section-content py-20">
-      <div className="mb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-          We build the layer that connects it all.
-        </h2>
-        <p className="mt-4 text-secondary text-lg leading-relaxed max-w-2xl">
-          Datalift creates practical data systems around your existing business.
-          We connect the sources, define the logic, surface the useful signals
-          and automate the next action.
-        </p>
-      </div>
+    <section className="section-content py-24 md:py-32">
+      <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">What we build</p>
+          <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+            Better systems, not more software.
+          </h2>
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-secondary">
+            Datalift works across data, automation and AI to make the systems already behind your business feel like one connected operation.
+          </p>
+          <Link href="/services" className="mt-8 inline-flex items-center gap-2 text-sm font-medium">
+            Explore all services <span aria-hidden>→</span>
+          </Link>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map((service) => (
-          <div key={service.title} className="rounded-2xl border border-border bg-white overflow-hidden flex flex-col">
-            <div className="relative h-40 w-full overflow-hidden bg-background">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-            <div className="p-5 flex flex-col flex-1">
-              <h3 className="font-medium">{service.title}</h3>
-              <p className="mt-2 text-sm text-secondary">{service.body}</p>
-              <Link
-                href="/services"
-                className="mt-auto pt-4 inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
-              >
-                Learn more <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </div>
-        ))}
+        <div className="divide-y divide-border border-y border-border">
+          {services.map((service) => (
+            <article key={service.title} className="grid gap-6 py-8 md:grid-cols-[1fr_220px] md:items-center">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">{service.eyebrow}</p>
+                <h3 className="mt-3 text-2xl font-medium tracking-[-0.025em] md:text-3xl">{service.title}</h3>
+                <p className="mt-3 max-w-xl leading-relaxed text-secondary">{service.body}</p>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-white">
+                <Image src={service.image} alt="" fill className="object-cover" sizes="220px" />
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
