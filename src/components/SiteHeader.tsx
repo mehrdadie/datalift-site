@@ -3,60 +3,66 @@
 import Link from "next/link";
 import { useState } from "react";
 import { primaryNav, site } from "@/content/site";
-import PrimaryButton from "@/components/PrimaryButton";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-border">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
-          <Link href="/" className="font-semibold tracking-tight">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-xl">
+      <div className="section-content">
+        <div className="flex h-[72px] items-center justify-between">
+          <Link href="/" className="text-sm font-bold uppercase tracking-[0.18em]">
             {site.name}
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+          <nav className="hidden items-center gap-8 text-sm md:flex" aria-label="Primary">
             {primaryNav.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-foreground transition-colors">
+              <Link key={item.href} href={item.href} className="text-secondary transition-colors hover:text-foreground">
                 {item.label}
               </Link>
             ))}
-            <PrimaryButton href="/contact">{site.cta}</PrimaryButton>
+            <Link
+              href="/contact"
+              className="inline-flex h-11 items-center rounded-full bg-foreground px-5 font-medium text-background transition-transform hover:-translate-y-0.5"
+            >
+              {site.cta}
+            </Link>
           </nav>
 
           <button
             type="button"
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-border"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen((value) => !value)}
           >
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-            <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
-              {open ? (
-                <path d="M6 6l12 12M6 18L18 6" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
+            <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+              {open ? <path d="M6 6l12 12M6 18L18 6" /> : <path d="M5 8h14M5 16h14" />}
             </svg>
           </button>
         </div>
 
         {open && (
-          <nav id="mobile-menu" className="md:hidden pb-4" aria-label="Mobile">
-            <div className="flex flex-col gap-3 text-sm">
+          <nav id="mobile-menu" className="border-t border-border pb-6 pt-5 md:hidden" aria-label="Mobile">
+            <div className="flex flex-col">
               {primaryNav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-xl border border-border px-4 py-2 hover:border-foreground transition-colors"
+                  className="border-b border-border py-4 text-2xl font-medium tracking-[-0.03em]"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <PrimaryButton href="/contact">{site.cta}</PrimaryButton>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-foreground px-5 text-sm font-medium text-background"
+                onClick={() => setOpen(false)}
+              >
+                {site.cta}
+              </Link>
             </div>
           </nav>
         )}
