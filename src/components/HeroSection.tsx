@@ -44,7 +44,7 @@ export default function HeroSection() {
       <div className="hero-grid absolute inset-0" aria-hidden />
       <div className="hero-field absolute inset-0" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-[1440px] px-6 py-18 md:px-10 md:py-24 lg:min-h-[820px] lg:px-16">
+      <div className="relative mx-auto w-full max-w-[1440px] px-6 py-[72px] md:px-10 md:py-24 lg:min-h-[820px] lg:px-16">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,700px)_minmax(430px,1fr)] lg:items-center">
           <div className="relative z-10 max-w-[700px]">
             <motion.div
@@ -88,11 +88,11 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="inline-flex h-13 items-center gap-4 rounded-full bg-[#075CFF] py-1.5 pl-6 pr-2 text-sm font-bold text-white shadow-[0_10px_26px_rgba(7,92,255,0.30)] transition-transform hover:-translate-y-0.5 focus-visible:outline-[#075CFF]"
+                className="inline-flex h-[52px] items-center gap-4 rounded-full bg-[#075CFF] py-1.5 pl-6 pr-2 text-sm font-bold text-white shadow-[0_10px_26px_rgba(7,92,255,0.30)] transition-transform hover:-translate-y-0.5 focus-visible:outline-[#075CFF]"
               >
                 See how we can help
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#075CFF]">
-                  <ArrowRight className="h-4.5 w-4.5" aria-hidden />
+                  <ArrowRight className="h-[18px] w-[18px]" aria-hidden />
                 </span>
               </Link>
 
@@ -100,7 +100,7 @@ export default function HeroSection() {
                 href="/work"
                 className="inline-flex h-11 items-center gap-3 text-sm font-medium text-[#101416] transition-colors hover:text-[#075CFF] focus-visible:outline-[#075CFF]"
               >
-                <span className="inline-flex h-8.5 w-8.5 items-center justify-center rounded-full border border-[#D9DFE0] bg-white/40">
+                <span className="inline-flex h-[34px] w-[34px] items-center justify-center rounded-full border border-[#D9DFE0] bg-white/40">
                   <Play className="h-3.5 w-3.5 fill-[#101416]" aria-hidden />
                 </span>
                 Watch the 2-min tour
@@ -113,7 +113,7 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.28 }}
               className="mt-12 flex max-w-2xl flex-wrap gap-y-5 border-t border-[#D9DFE0] pt-6"
             >
-              {stats.map((stat, index) => (
+              {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="min-w-[150px] pr-8 first:pl-0 md:border-r md:border-[#D9DFE0] md:px-8 md:first:pl-0 md:last:border-r-0"
