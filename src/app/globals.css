@@ -58,3 +58,253 @@ img {
 .section-content {
   @apply mx-auto max-w-7xl px-6 lg:px-8;
 }
+
+.home-hero {
+  color: #101416;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(16, 20, 22, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 20, 22, 0.045) 1px, transparent 1px);
+  background-size: 118px 118px;
+  opacity: 0.72;
+}
+
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #F4F6F3 0%, rgba(244, 246, 243, 0.86) 38%, rgba(244, 246, 243, 0.38) 70%, #F4F6F3 100%),
+    linear-gradient(180deg, #F4F6F3 0%, rgba(244, 246, 243, 0) 28%, rgba(244, 246, 243, 0.82) 100%);
+}
+
+.hero-field {
+  background:
+    radial-gradient(circle at 74% 28%, rgba(34, 201, 240, 0.25), transparent 17rem),
+    radial-gradient(circle at 78% 50%, rgba(7, 92, 255, 0.2), transparent 30rem),
+    radial-gradient(circle at 92% 42%, rgba(77, 139, 255, 0.14), transparent 24rem);
+}
+
+.hero-orbit-scene {
+  transform: translateZ(0);
+}
+
+.hero-ring {
+  border: 1px solid rgba(7, 92, 255, 0.28);
+  border-radius: 999px;
+  box-shadow: 0 0 36px rgba(7, 92, 255, 0.08);
+  transform: rotate(var(--hero-start, -8deg));
+  animation: hero-ring-drift var(--hero-duration, 14s) ease-in-out infinite alternate;
+}
+
+.hero-ring-cyan {
+  border-color: rgba(34, 201, 240, 0.38);
+}
+
+.hero-ring-soft {
+  border-color: rgba(7, 92, 255, 0.16);
+  box-shadow: none;
+}
+
+.hero-sphere {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 31% 22%, rgba(255, 255, 255, 0.98) 0 4%, rgba(255, 255, 255, 0.5) 5%, transparent 13%),
+    radial-gradient(circle at 35% 30%, rgba(154, 220, 255, 0.94), transparent 22%),
+    radial-gradient(circle at 70% 78%, rgba(3, 31, 117, 0.9), transparent 36%),
+    radial-gradient(circle at 45% 42%, #4CB9FF 0%, #075CFF 42%, #051B65 100%);
+  box-shadow:
+    0 38px 90px rgba(7, 92, 255, 0.32),
+    0 0 0 24px rgba(7, 92, 255, 0.06),
+    inset -28px -42px 78px rgba(2, 15, 64, 0.48),
+    inset 22px 26px 64px rgba(255, 255, 255, 0.34);
+  overflow: hidden;
+  animation: hero-float 7s ease-in-out infinite alternate;
+}
+
+.hero-sphere::before,
+.hero-sphere::after {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.hero-sphere::before {
+  background:
+    linear-gradient(115deg, transparent 17%, rgba(255, 255, 255, 0.28) 18%, transparent 20%),
+    linear-gradient(145deg, transparent 34%, rgba(34, 201, 240, 0.24) 35%, transparent 37%),
+    linear-gradient(20deg, transparent 46%, rgba(255, 255, 255, 0.16) 47%, transparent 49%);
+  opacity: 0.72;
+}
+
+.hero-sphere::after {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: conic-gradient(from 120deg, transparent, rgba(34, 201, 240, 0.18), transparent 34%, rgba(255, 255, 255, 0.16), transparent 62%);
+  mix-blend-mode: screen;
+  animation: hero-sphere-sheen 16s linear infinite;
+}
+
+.hero-sphere-shine {
+  position: absolute;
+  left: 24%;
+  top: 16%;
+  height: 18%;
+  width: 28%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+  filter: blur(18px);
+  transform: rotate(-28deg);
+}
+
+.hero-node {
+  border-radius: 999px;
+  background: #075CFF;
+  box-shadow: 0 0 0 6px rgba(7, 92, 255, 0.11), 0 0 26px rgba(7, 92, 255, 0.45);
+  animation: hero-node-pulse 2.6s ease-in-out infinite;
+  animation-delay: var(--hero-delay, 0s);
+}
+
+.hero-node::after {
+  content: "";
+  position: absolute;
+  inset: -11px;
+  border: 1px solid rgba(7, 92, 255, 0.25);
+  border-radius: 999px;
+  animation: hero-node-ring 2.6s ease-in-out infinite;
+  animation-delay: var(--hero-delay, 0s);
+}
+
+.hero-node-cyan {
+  background: #22C9F0;
+  box-shadow: 0 0 0 6px rgba(34, 201, 240, 0.12), 0 0 24px rgba(34, 201, 240, 0.5);
+}
+
+.hero-node-cyan::after {
+  border-color: rgba(34, 201, 240, 0.28);
+}
+
+.hero-chip {
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 34px rgba(14, 29, 61, 0.12);
+  backdrop-filter: blur(10px);
+  animation: hero-chip-float 6s ease-in-out infinite alternate;
+}
+
+.hero-chip strong,
+.hero-chip small {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-chip strong {
+  color: #101416;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.hero-chip small {
+  margin-top: 2px;
+  color: #5F696D;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-bars {
+  display: inline-flex;
+  height: 34px;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.hero-bars i {
+  display: block;
+  width: 5px;
+  border-radius: 2px;
+  background: rgba(7, 92, 255, 0.36);
+}
+
+.hero-bars i:nth-child(1) { height: 10px; }
+.hero-bars i:nth-child(2) { height: 16px; }
+.hero-bars i:nth-child(3) { height: 22px; }
+.hero-bars i:nth-child(4) { height: 28px; background: #075CFF; }
+.hero-bars i:nth-child(5) { height: 34px; background: #075CFF; }
+
+@keyframes hero-ring-drift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(var(--hero-start, -8deg));
+  }
+  to {
+    transform: translate3d(14px, -10px, 0) rotate(var(--hero-end, -4deg));
+  }
+}
+
+@keyframes hero-float {
+  from {
+    transform: translate3d(0, 8px, 0) scale(0.985);
+  }
+  to {
+    transform: translate3d(0, -8px, 0) scale(1);
+  }
+}
+
+@keyframes hero-sphere-sheen {
+  from {
+    transform: rotate(0deg);
+    opacity: 0.72;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes hero-node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-node-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+  70%, 100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-chip-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-field {
+    background:
+      radial-gradient(circle at 50% 72%, rgba(34, 201, 240, 0.22), transparent 15rem),
+      radial-gradient(circle at 58% 78%, rgba(7, 92, 255, 0.18), transparent 26rem);
+  }
+}
