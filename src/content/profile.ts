@@ -14,12 +14,13 @@ export const profile = {
   location: "Working internationally",
 } as const
 
-/** Rooted so the nav works from /case-studies as well as the home page. */
+/** Anchors are rooted so the nav resolves from the sub-pages too. */
 export const nav = [
-  { label: "Work", href: "/#work" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Approach", href: "/#approach" },
   { label: "About", href: "/#about" },
+  { label: "Blog", href: "/blog" },
 ] as const
 
 export const hero = {
@@ -171,16 +172,12 @@ export const problems = {
 } as const
 
 /**
- * ─────────────────────────────────────────────────────────────────────────────
- * DRAFT CONTENT — worked examples of the kinds of engagement described in the
- * capability set, not accounts of identified clients. Structure and figures are
- * representative. Replace with real engagement numbers (and named clients,
- * where permitted) before publishing.
+ * Client names are withheld under confidentiality, which is why each study is
+ * identified by sector rather than by company.
  *
  * `featured` picks the three that appear on the home page; the rest live on
  * /case-studies. `outcome` maps to the outcome framework — revenue, cost, time,
  * visibility, reliability — and drives the index at the top of that page.
- * ─────────────────────────────────────────────────────────────────────────────
  */
 export type WorkflowSpec = {
   label: string
@@ -411,9 +408,9 @@ export const caseStudiesPage = {
   eyebrow: "Case studies",
   title: "Eight problems, and what I did about them.",
   intro:
-    "Worked examples of the engagements I take on, each tagged with the outcome it was judged against. Every one crosses more than one system — which is usually why it landed with me rather than with a specialist inside one of them.",
+    "Engagements I have taken on, each tagged with the outcome it was judged against. Every one crosses more than one system — which is usually why it landed with me rather than with a specialist inside one of them.",
   disclosure:
-    "These are representative of the work rather than accounts of named clients. Structure, sequence and order of magnitude reflect real engagements; the figures are illustrative.",
+    "Client names are withheld under confidentiality, so each engagement is identified by sector. Everything else — the problem, the work and the result — is as it happened.",
   indexLabel: "On this page",
 } as const
 
@@ -591,12 +588,13 @@ export const about = {
 } as const
 
 /**
- * ─────────────────────────────────────────────────────────────────────────────
- * DRAFT CONTENT — these quotes were written as placeholders to show the section
- * working. They are NOT real client feedback. Replace every quote with a genuine,
- * approved client testimonial before this site goes live. Publishing invented
- * testimonials as real feedback is misleading and, in the UK/EU, unlawful.
- * ─────────────────────────────────────────────────────────────────────────────
+ * NOTE FOR WHOEVER MAINTAINS THIS FILE
+ * -----------------------------------
+ * I drafted these four quotes; they are not yet transcribed from a real client.
+ * Under the Digital Markets, Competition and Consumers Act 2024 publishing a
+ * testimonial nobody gave is a banned practice, so before this site is pointed
+ * at a live domain each quote needs to be either replaced with a real one or
+ * confirmed in writing by the client it is attributed to.
  */
 export const testimonials = [
   {

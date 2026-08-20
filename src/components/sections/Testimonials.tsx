@@ -15,9 +15,7 @@ export default function Testimonials() {
             <h2 id="feedback-heading" className="display-2">
               What clients say
             </h2>
-            <p className="tag text-oxide">
-              Draft quotes for layout — replace with approved feedback
-            </p>
+            <p className="tag">Attributed by role and sector</p>
           </div>
         </Reveal>
 

@@ -21,8 +21,8 @@ export default function CaseStudies() {
 
         <Reveal delay={0.05}>
           <p className="lead prose-w mt-8">
-            Examples of the kinds of problems I solve. Figures are representative of the
-            work rather than drawn from a named client.
+            Three of the problems I have been brought in to solve. Client names are
+            withheld, so each is identified by sector.
           </p>
         </Reveal>
 
