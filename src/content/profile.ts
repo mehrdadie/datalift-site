@@ -24,14 +24,14 @@ export const nav = [
 ] as const
 
 export const hero = {
-  eyebrow: "Data · Automation · Growth systems",
+  eyebrow: "Data · Automation · Reporting",
   headingLead: "I connect the systems",
   headingAccent: "behind your business.",
   body:
     "Data, CRM, marketing, sales and operations — connected into one system that gives you clearer decisions, better visibility and less manual work.",
   primaryCta: { label: "Discuss a project", href: "#contact" },
   secondaryCta: { label: "See selected work", href: "#work" },
-  trust: "Available for selected consulting and implementation projects.",
+  trust: "Taking on new work.",
 } as const
 
 /**
