@@ -13,7 +13,7 @@ should carry placeholders, not your instance.
 
 ## Title
 
-> Cross-post your blog from Supabase to dev.to and Hashnode with correct canonical URLs
+> Cross-post your blog from Supabase to dev.to with correct canonical URLs
 
 ## Short description (one line)
 
@@ -23,6 +23,12 @@ should carry placeholders, not your instance.
 ## Categories / tags
 
 `Marketing` · `Content` · `SEO` · `Supabase` · `HTTP Request` · `Scheduling`
+
+> **Note before submitting:** the Hashnode branch is disabled in the shipped
+> workflow because Hashnode retired free API access in May 2026. Either remove
+> that node entirely before submitting, or keep it disabled and say why in the
+> description — a template with a step that cannot work for free users will
+> attract complaints.
 
 ---
 

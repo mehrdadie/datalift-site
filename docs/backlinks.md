@@ -72,7 +72,7 @@ You borrow their reach and authority with no duplicate-content penalty.
 | Platform | Canonical support | Automatable | Status |
 |---|---|---|---|
 | [dev.to](https://dev.to) | Yes — `canonical_url` | Yes, REST API | |
-| [Hashnode](https://hashnode.com) | Yes — original article URL | Yes, GraphQL API | |
+| [Hashnode](https://hashnode.com) | Yes — original article URL | **Paid only** — API needs Hashnode Pro ($5/mo) since May 2026 | |
 | [Medium](https://medium.com) | Yes, via import tool | **No** — no new API tokens since 2025 | |
 | [Substack](https://substack.com) | Newsletter + archive pages | Manual | |
 | [Reddit](https://reddit.com) r/RevOps, r/analytics | Link only where it answers the question | Manual | |
@@ -81,6 +81,12 @@ You borrow their reach and authority with no duplicate-content penalty.
 **Caveat:** dev.to and Hashnode are developer audiences — not founders, CMOs or
 heads of sales. They help entity corroboration and AI retrieval. They will not
 produce leads. Do them for findability, not pipeline.
+
+**Hashnode went paid.** Free GraphQL API access was retired on 13 May 2026 after
+scrapers abused it; since 11 June the API sits behind Hashnode Pro at $5/month or
+$50/year. Manual posting through the web UI is still free — only automation is
+gated. Given the audience caveat above, paying for automated access here is hard
+to justify. dev.to remains free and is the better of the two anyway.
 
 ---
 
