@@ -1,23 +1,24 @@
 import type { Metadata, Viewport } from "next"
-import { Geist_Mono, Inter, Manrope } from "next/font/google"
+import { Archivo, Instrument_Sans, JetBrains_Mono } from "next/font/google"
 import { profile } from "@/content/profile"
 import "./globals.css"
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+/** Display face carries a width axis — headings run slightly expanded. */
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  axes: ["wdth"],
   display: "swap",
 })
 
-const inter = Inter({
-  variable: "--font-inter",
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
   subsets: ["latin"],
   display: "swap",
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -70,13 +71,13 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#08090B",
+  themeColor: "#0F1518",
   colorScheme: "dark",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${instrument.variable} ${jetbrains.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   )

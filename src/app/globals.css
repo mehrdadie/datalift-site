@@ -1,50 +1,61 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Palette: instrument panel, not SaaS dashboard.
+
+   A deep slate-teal ground rather than black, bone-coloured type rather than
+   blue-white, and three accents that each carry one fixed meaning:
+
+     signal    amber      live, connected, the action to take
+     oxide     burnt red  the broken state, the "before", the disagreement
+     verdigris muted green  resolved, reconciled, the outcome
+
+   Never swap those roles — the colour is doing work, not decoration.
+   ───────────────────────────────────────────────────────────────────────── */
+
 @theme {
-  /* Surfaces */
-  --color-base: #08090b;
-  --color-surface: #0d0f12;
-  --color-card: #111318;
-  --color-raised: #15181d;
+  --color-ground: #0f1518;
+  --color-ground-2: #131c1f;
+  --color-panel: #182226;
+  --color-panel-2: #1e2a2e;
+  --color-pit: #0a1012;
 
-  /* Text */
-  --color-ink: #f5f7fa;
-  --color-ink-2: #a7adb7;
-  --color-ink-3: #6f7682;
+  --color-bone: #ece5d9;
+  --color-bone-2: #9dabaa;
+  --color-bone-3: #6d7c7c;
 
-  /* Line */
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.14);
+  --color-paper: #e8e1d3;
+  --color-paper-2: #d6cdbb;
+  --color-graphite: #141c1f;
 
-  /* Accent */
-  --color-accent: #4c8dff;
-  --color-accent-hi: #70a5ff;
-  --color-accent-soft: rgba(76, 141, 255, 0.1);
-  --color-positive: #8fd7b5;
+  --color-rule: rgba(236, 229, 217, 0.13);
+  --color-rule-2: rgba(236, 229, 217, 0.26);
+  --color-rule-ink: rgba(20, 28, 31, 0.16);
 
-  /* Type */
-  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-signal: #e5a03c;
+  --color-signal-hi: #f3b558;
+  --color-signal-soft: rgba(229, 160, 60, 0.12);
+  --color-oxide: #d9673c;
+  --color-verdigris: #8fb8a3;
+
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @layer base {
-  * {
-    border-color: var(--color-line);
-  }
-
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 96px;
+    scroll-padding-top: 88px;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: var(--color-base);
-    color: var(--color-ink);
+    background-color: var(--color-ground);
+    color: var(--color-bone);
     font-family: var(--font-sans);
     font-size: 17px;
-    line-height: 1.65;
+    line-height: 1.62;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
@@ -55,9 +66,10 @@
   h3,
   h4 {
     font-family: var(--font-display);
+    font-variation-settings: "wdth" 112;
     font-weight: 600;
-    letter-spacing: -0.028em;
-    line-height: 1.06;
+    letter-spacing: -0.022em;
+    line-height: 1.02;
     text-wrap: balance;
   }
 
@@ -66,239 +78,219 @@
   }
 
   ::selection {
-    background-color: rgba(76, 141, 255, 0.28);
-    color: #ffffff;
+    background-color: var(--color-signal);
+    color: var(--color-pit);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent-hi);
+    outline: 2px solid var(--color-signal);
     outline-offset: 3px;
-    border-radius: 4px;
   }
 
-  img,
   svg {
     max-width: 100%;
   }
 }
 
 @layer components {
-  /* Shell ------------------------------------------------------------ */
+  /* Measure ---------------------------------------------------------- */
   .shell {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1320px;
     margin-inline: auto;
     padding-inline: 20px;
   }
 
   @media (min-width: 768px) {
     .shell {
-      padding-inline: 32px;
+      padding-inline: 36px;
     }
   }
 
   @media (min-width: 1280px) {
     .shell {
-      padding-inline: 40px;
+      padding-inline: 48px;
     }
   }
 
   .section {
-    padding-block: 76px;
+    padding-block: 80px;
   }
 
   @media (min-width: 768px) {
     .section {
-      padding-block: 108px;
+      padding-block: 112px;
     }
   }
 
   @media (min-width: 1024px) {
     .section {
-      padding-block: 136px;
+      padding-block: 144px;
     }
   }
 
   .prose-w {
-    max-width: 68ch;
+    max-width: 66ch;
   }
 
-  /* Typography ------------------------------------------------------- */
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    line-height: 1;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--color-ink-3);
-  }
-
+  /* Type ------------------------------------------------------------- */
   .display-1 {
-    font-size: clamp(2.6rem, 7.4vw, 5.75rem);
+    font-size: clamp(2.7rem, 8.2vw, 6.4rem);
+    font-variation-settings: "wdth" 106;
+    letter-spacing: -0.035em;
   }
 
   .display-2 {
-    font-size: clamp(2rem, 4.4vw, 3.3rem);
+    font-size: clamp(2.05rem, 4.6vw, 3.5rem);
   }
 
   .display-3 {
-    font-size: clamp(1.35rem, 2.1vw, 1.75rem);
-    line-height: 1.2;
+    font-size: clamp(1.35rem, 2.1vw, 1.7rem);
+    line-height: 1.16;
   }
 
   .lead {
     font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
-    line-height: 1.62;
-    color: var(--color-ink-2);
+    line-height: 1.6;
+    color: var(--color-bone-2);
   }
 
-  .mono-label {
+  /* One mono system for every label, figure and tag on the page. */
+  .tag {
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-ink-3);
+    color: var(--color-bone-3);
+  }
+
+  /* Section markers are bracketed like a schematic reference, and each one
+     carries its own index — the page reads as a numbered document. */
+  .marker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-signal);
+  }
+
+  .marker::before {
+    content: "[ ";
+    color: var(--color-bone-3);
+  }
+
+  .marker::after {
+    content: " ]";
+    color: var(--color-bone-3);
   }
 
   /* Surfaces --------------------------------------------------------- */
-  .card {
-    background-color: var(--color-card);
-    border: 1px solid var(--color-line);
-    border-radius: 20px;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.35s ease,
-      background-color 0.35s ease;
+  /* Data surfaces are square. Only controls get a radius. */
+  .panel {
+    background-color: var(--color-panel);
+    border: 1px solid var(--color-rule);
   }
 
-  .card-hover:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-line-strong);
-    background-color: var(--color-raised);
+  .rule-t {
+    border-top: 1px solid var(--color-rule);
   }
 
-  .hairline {
-    border-top: 1px solid var(--color-line);
+  .rule-b {
+    border-bottom: 1px solid var(--color-rule);
   }
 
-  /* Buttons ---------------------------------------------------------- */
+  /* Controls --------------------------------------------------------- */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 9px;
     height: 48px;
     padding-inline: 22px;
-    border-radius: 13px;
-    font-size: 15px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
     font-weight: 500;
-    letter-spacing: -0.006em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     white-space: nowrap;
     transition:
-      background-color 0.2s ease,
-      border-color 0.2s ease,
-      color 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .btn:active {
-    transform: translateY(1px);
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease;
   }
 
   .btn-primary {
-    background-color: var(--color-accent);
-    color: #ffffff;
+    background-color: var(--color-signal);
+    color: var(--color-pit);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-accent-hi);
+    background-color: var(--color-signal-hi);
   }
 
   .btn-secondary {
-    border: 1px solid var(--color-line-strong);
-    color: var(--color-ink);
-    background-color: transparent;
+    border: 1px solid var(--color-rule-2);
+    color: var(--color-bone);
   }
 
   .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.045);
-    border-color: rgba(255, 255, 255, 0.24);
+    border-color: var(--color-signal);
+    color: var(--color-signal);
   }
 
   .btn-sm {
-    height: 40px;
-    padding-inline: 16px;
-    font-size: 14px;
-    border-radius: 11px;
+    height: 38px;
+    padding-inline: 15px;
+    font-size: 11.5px;
   }
 
-  /* Details ---------------------------------------------------------- */
   .chip {
     display: inline-flex;
     align-items: center;
-    height: 30px;
-    padding-inline: 12px;
-    border: 1px solid var(--color-line);
-    border-radius: 999px;
+    height: 26px;
+    padding-inline: 9px;
+    border: 1px solid var(--color-rule);
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--color-ink-2);
-    background-color: rgba(255, 255, 255, 0.02);
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-bone-2);
   }
 
-  .rule-glow {
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(76, 141, 255, 0.45),
-      transparent
-    );
+  /* Inverted section ------------------------------------------------- */
+  /* One printed sheet in the middle of a dark page. Children inherit the
+     swapped tokens, so nothing needs a light-mode variant of its own. */
+  .on-paper {
+    --color-ground: var(--color-paper);
+    --color-panel: rgba(20, 28, 31, 0.035);
+    --color-bone: var(--color-graphite);
+    --color-bone-2: #4c5a5c;
+    --color-bone-3: #7e8a89;
+    --color-rule: var(--color-rule-ink);
+    --color-rule-2: rgba(20, 28, 31, 0.32);
+    --color-signal: #a86a12;
+    --color-verdigris: #3f7a5d;
+    --color-oxide: #b34a22;
+
+    background-color: var(--color-paper);
+    color: var(--color-graphite);
+  }
+
+  .on-paper .btn-primary {
+    background-color: var(--color-graphite);
+    color: var(--color-paper);
   }
 }
 
-/* Utilities ---------------------------------------------------------- */
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 0
-  );
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
+/* Motion ------------------------------------------------------------- */
 @keyframes dash-flow {
   to {
     stroke-dashoffset: -240;
   }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 46s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -312,10 +304,6 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-  }
-
-  .animate-marquee {
-    animation: none;
   }
 
   /* Scroll reveals write inline styles; beat them so nothing stays hidden. */

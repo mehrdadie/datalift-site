@@ -26,10 +26,10 @@ export default function SystemsGraph() {
       {/* soft field behind the graph */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 rounded-[28px]"
+        className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(58% 52% at 50% 50%, rgba(76,141,255,0.10), transparent 72%)",
+            "radial-gradient(56% 50% at 50% 50%, rgba(229,160,60,0.10), transparent 72%)",
         }}
       />
 
@@ -41,9 +41,9 @@ export default function SystemsGraph() {
       >
         <defs>
           <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#4C8DFF" stopOpacity="0.05" />
-            <stop offset="50%" stopColor="#4C8DFF" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#4C8DFF" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#E5A03C" stopOpacity="0.05" />
+            <stop offset="50%" stopColor="#E5A03C" stopOpacity="0.62" />
+            <stop offset="100%" stopColor="#E5A03C" stopOpacity="0.05" />
           </linearGradient>
         </defs>
 
@@ -60,7 +60,7 @@ export default function SystemsGraph() {
                 y1={a.y}
                 x2={b.x}
                 y2={b.y}
-                stroke="rgba(255,255,255,0.11)"
+                stroke="rgba(236,229,217,0.13)"
                 strokeWidth={1}
                 vectorEffect="non-scaling-stroke"
               />
@@ -99,14 +99,14 @@ export default function SystemsGraph() {
             <span
               className={
                 hub
-                  ? "relative flex items-center gap-2 rounded-xl border border-accent/35 bg-accent-soft px-3.5 py-2 font-mono text-[11px] tracking-[0.14em] text-ink uppercase backdrop-blur-sm"
-                  : "relative flex items-center gap-2 rounded-xl border border-line bg-card/85 px-3 py-1.5 font-mono text-[10.5px] tracking-[0.12em] text-ink-2 uppercase backdrop-blur-sm"
+                  ? "relative flex items-center gap-2 border border-signal/45 bg-signal-soft px-3.5 py-2 font-mono text-[11px] font-medium tracking-[0.14em] text-bone uppercase backdrop-blur-sm"
+                  : "relative flex items-center gap-2 border border-rule bg-panel/90 px-3 py-1.5 font-mono text-[10.5px] tracking-[0.12em] text-bone-2 uppercase backdrop-blur-sm"
               }
             >
               <span
                 aria-hidden
                 className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                  hub ? "bg-accent" : "bg-ink-3"
+                  hub ? "bg-signal" : "bg-bone-3"
                 }`}
               />
               {node.label}

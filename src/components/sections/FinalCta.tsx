@@ -1,39 +1,31 @@
-import { ArrowRight } from "lucide-react"
-import { finalCta, profile } from "@/content/profile"
+import { finalCta, hero, profile } from "@/content/profile"
 import Reveal from "@/components/ui/Reveal"
 
+/**
+ * The close. Left-aligned and oversized rather than the centred hero-echo every
+ * landing page ends on, with the four openers set as a list you can click into
+ * — the email writes its own subject line.
+ */
 export default function FinalCta() {
   const mailto = `mailto:${profile.email}?subject=${encodeURIComponent("Project enquiry")}`
 
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-line">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(62% 78% at 50% 108%, rgba(76,141,255,0.16), transparent 68%)",
-        }}
-      />
-
-      <div className="shell relative section">
+    <section id="contact" className="section border-t border-rule bg-pit">
+      <div className="shell grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-20">
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-[clamp(2.4rem,6vw,4.4rem)] leading-[1.02] font-semibold tracking-[-0.035em] text-ink">
+          <div>
+            <h2 className="font-display text-[clamp(2.5rem,6.4vw,4.6rem)] leading-[0.98] font-semibold tracking-[-0.038em]">
               {finalCta.headline}
             </h2>
-            <p className="mt-4 font-display text-[clamp(1.35rem,3vw,2.1rem)] leading-tight font-medium tracking-[-0.03em] text-ink-3">
+            <p className="mt-4 max-w-lg font-display text-[clamp(1.4rem,2.6vw,2rem)] leading-[1.12] font-medium tracking-[-0.03em] text-bone-3 [text-wrap:pretty]">
               {finalCta.sub}
             </p>
-            <p className="lead mx-auto mt-8 max-w-xl">{finalCta.body}</p>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <p className="lead prose-w mt-8">{finalCta.body}</p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               <a href={mailto} className="btn btn-primary">
                 {finalCta.primary}
-                <ArrowRight size={16} strokeWidth={2} aria-hidden />
-              </a>
-              <a href={mailto} className="btn btn-secondary">
-                {finalCta.secondary}
               </a>
               <a
                 href={profile.linkedin}
@@ -44,23 +36,46 @@ export default function FinalCta() {
                 LinkedIn
               </a>
             </div>
+
+            <a
+              href={`mailto:${profile.email}`}
+              className="mt-8 inline-block font-mono text-[13px] tracking-[0.04em] text-bone-2 underline decoration-rule-2 underline-offset-[6px] transition-colors hover:text-signal"
+            >
+              {profile.email}
+            </a>
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <ul className="mx-auto mt-16 grid max-w-4xl gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
-            {finalCta.prompts.map((prompt) => (
-              <li key={prompt} className="bg-card px-5 py-4">
-                <a
-                  href={`mailto:${profile.email}?subject=${encodeURIComponent(prompt)}`}
-                  className="flex items-start gap-3 text-[15px] text-ink-2 transition-colors hover:text-ink"
-                >
-                  <span aria-hidden className="mt-[10px] h-px w-4 shrink-0 bg-accent/70" />
-                  &ldquo;{prompt}&rdquo;
-                </a>
-              </li>
-            ))}
-          </ul>
+        <Reveal delay={0.08}>
+          <div>
+            <p className="tag border-b border-rule-2 pb-3">Start with whichever is true</p>
+            <ul>
+              {finalCta.prompts.map((prompt, i) => (
+                <li key={prompt}>
+                  <a
+                    href={`mailto:${profile.email}?subject=${encodeURIComponent(prompt)}`}
+                    className="group flex items-baseline gap-5 border-b border-rule py-5 text-[15.5px] text-bone-2 transition-colors hover:text-bone"
+                  >
+                    <span className="font-mono text-[11px] tracking-[0.14em] text-bone-3 transition-colors group-hover:text-signal">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span>&ldquo;{prompt}&rdquo;</span>
+                    <span
+                      aria-hidden
+                      className="ml-auto font-mono text-[13px] text-bone-3 opacity-0 transition-opacity group-hover:opacity-100"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <p className="tag mt-8 flex items-center gap-3">
+              <span aria-hidden className="h-1.5 w-1.5 bg-verdigris" />
+              {hero.trust}
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>

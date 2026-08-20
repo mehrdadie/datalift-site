@@ -4,10 +4,35 @@ Single-page site for an independent Data, Automation & Growth Systems Consultant
 Dark, editorial, built around three diagrams that show the actual work rather than
 stock imagery.
 
+## Design
+
+Three accents, each with one fixed job — swapping them breaks the argument the
+page is making:
+
+| Token | Colour | Means |
+|---|---|---|
+| `signal` | amber | live, connected, the action to take |
+| `oxide` | burnt red | the broken state, the "before", the figure that disagrees |
+| `verdigris` | muted green | resolved, reconciled, the outcome |
+
+The ground is a deep slate-teal rather than black and type is bone rather than
+blue-white. Data surfaces are square; only controls take a radius. Type is
+Archivo (display, running slightly expanded on the width axis), Instrument Sans
+(body) and JetBrains Mono (every label, figure and tag).
+
+`Selected outcomes` is the one inverted section — a printed sheet in the middle
+of a dark page, because proof is the part a client circulates. It sets
+`.on-paper`, which swaps the tokens locally, so every child including the SVG
+diagrams adapts without a second set of styles.
+
+Sections deliberately do not share a template: the problems are ruled rows with
+the symptom shown as data, capabilities are columns divided by rules, feedback is
+a column of unboxed pull quotes, and best-fit is a qualification ledger.
+
 ## Stack
 
 Next.js 16 (App Router, static export of `/`) · React 19 · TypeScript · Tailwind CSS v4
-· Framer Motion · Lucide icons. No CMS, no database, no external assets — the whole
+· Framer Motion. No CMS, no database, no external assets — the whole
 page is one static route.
 
 ```bash

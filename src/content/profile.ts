@@ -60,23 +60,25 @@ export const heroEdges = [
 
 export const platforms = {
   title: "I work across the full business data chain.",
+  note: "Sixteen of the platforms these problems usually live in.",
+  /** Grouped by where each one sits in the chain, not alphabetically. */
   items: [
-    "Salesforce",
-    "GoHighLevel",
-    "HubSpot",
-    "BigQuery",
-    "Power BI",
-    "n8n",
-    "Aircall",
-    "Stripe",
-    "Chargebee",
-    "GA4",
-    "Google Ads",
-    "Meta Ads",
-    "LinkedIn Ads",
-    "PostHog",
-    "Supabase",
-    "Python",
+    { name: "Salesforce", kind: "CRM" },
+    { name: "GoHighLevel", kind: "CRM" },
+    { name: "HubSpot", kind: "CRM" },
+    { name: "Pipedrive", kind: "CRM" },
+    { name: "Google Ads", kind: "Acquisition" },
+    { name: "Meta Ads", kind: "Acquisition" },
+    { name: "LinkedIn Ads", kind: "Acquisition" },
+    { name: "GA4", kind: "Analytics" },
+    { name: "PostHog", kind: "Analytics" },
+    { name: "Aircall", kind: "Calls" },
+    { name: "Stripe", kind: "Payments" },
+    { name: "Chargebee", kind: "Payments" },
+    { name: "BigQuery", kind: "Warehouse" },
+    { name: "Supabase", kind: "Warehouse" },
+    { name: "Power BI", kind: "Reporting" },
+    { name: "n8n", kind: "Automation" },
   ],
 } as const
 
@@ -85,33 +87,58 @@ export const problems = {
   titleAccent: "They have a connection problem.",
   subtitle:
     "The biggest issues usually happen between systems, teams and reporting processes.",
+  /**
+   * `evidence` is the symptom rendered as data — generic illustrations of the
+   * shape of each problem, not figures from any client. The row flagged `bad`
+   * is the one that gives the problem away.
+   */
   cards: [
     {
-      icon: "split",
       title: "Your systems disagree",
       body: "CRM says one thing. Finance says another. Marketing reports something else.",
       outcome: "I create one reliable source of truth.",
+      evidenceLabel: "Leads, last month",
+      evidence: [
+        { k: "Ad platforms", v: "1,431", bad: false },
+        { k: "CRM", v: "1,284", bad: false },
+        { k: "Finance", v: "1,190", bad: true },
+      ],
     },
     {
-      icon: "repeat",
       title: "Reporting is still manual",
       body:
         "Teams export files, update spreadsheets, reconcile numbers and rebuild the same reports every week.",
       outcome: "I automate the workflow.",
+      evidenceLabel: "One reporting cycle",
+      evidence: [
+        { k: "Mon 09:00", v: "Export 6 files", bad: false },
+        { k: "Mon 15:00", v: "Reconcile by hand", bad: false },
+        { k: "Wed 11:00", v: "Report finally out", bad: true },
+      ],
     },
     {
-      icon: "revenue",
       title: "Revenue cannot be explained",
       body:
         "You know how much revenue came in, but cannot confidently explain which activity generated it.",
       outcome: "I connect marketing and sales activity to revenue.",
+      evidenceLabel: "Closed revenue, by source",
+      evidence: [
+        { k: "Attributed", v: "38%", bad: false },
+        { k: "Partial / guessed", v: "24%", bad: false },
+        { k: "Unknown", v: "38%", bad: true },
+      ],
     },
     {
-      icon: "gap",
       title: "Opportunities disappear between systems",
       body:
         "Leads, calls, follow-ups and customer activity exist, but nobody sees the full journey.",
       outcome: "I connect the customer journey.",
+      evidenceLabel: "Inbound leads, one quarter",
+      evidence: [
+        { k: "Received", v: "2,140", bad: false },
+        { k: "Contacted", v: "1,655", bad: false },
+        { k: "Never contacted", v: "485", bad: true },
+      ],
     },
   ],
 } as const

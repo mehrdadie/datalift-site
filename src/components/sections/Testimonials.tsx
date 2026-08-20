@@ -1,46 +1,42 @@
 import { testimonials } from "@/content/profile"
 import Reveal from "@/components/ui/Reveal"
 
+/**
+ * Pull quotes, unboxed. Each one is set against a rule with the attribution in
+ * the margin, and the block indents as it goes so the section reads as a
+ * column of voices rather than a grid of testimonial cards.
+ */
 export default function Testimonials() {
   return (
-    <section aria-labelledby="feedback-heading" className="section border-t border-line">
+    <section aria-labelledby="feedback-heading" className="section border-t border-rule bg-ground-2">
       <div className="shell">
         <Reveal>
-          <header className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="eyebrow mb-5 flex items-center gap-3">
-                <span aria-hidden className="h-px w-6 bg-accent/60" />
-                Client feedback
-              </p>
-              <h2 id="feedback-heading" className="display-2">
-                What clients say
-                <br />
-                <span className="text-ink-3">once it is working.</span>
-              </h2>
-            </div>
-            <p className="mono-label max-w-xs leading-relaxed">
-              Draft quotes for layout — replace with approved client feedback.
+          <div className="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-3">
+            <h2 id="feedback-heading" className="display-2">
+              What clients say
+            </h2>
+            <p className="tag text-oxide">
+              Draft quotes for layout — replace with approved feedback
             </p>
-          </header>
+          </div>
         </Reveal>
 
-        <ul className="mt-14 grid gap-4 md:mt-16 md:grid-cols-2 md:gap-5">
+        <ul className="mt-14 border-t border-rule">
           {testimonials.map((t, i) => (
-            <Reveal as="li" key={t.role} delay={i * 0.06}>
-              <figure className="card card-hover flex h-full flex-col p-7 md:p-9">
-                <span aria-hidden className="font-display text-3xl leading-none text-accent/45">
-                  &ldquo;
-                </span>
-                <blockquote className="mt-4 text-[17px] leading-[1.6] text-ink">
+            <Reveal as="li" key={t.role} delay={i * 0.05}>
+              <figure
+                className="grid gap-5 border-b border-rule py-10 md:grid-cols-[minmax(0,180px)_minmax(0,1fr)] md:gap-12 md:py-12"
+                style={{ paddingLeft: `${i * 8}px` }}
+              >
+                <figcaption className="md:pt-2">
+                  <p className="tag text-signal">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="mt-3 text-[14px] leading-snug text-bone-2">{t.role}</p>
+                  <p className="text-[14px] leading-snug text-bone-3">{t.org}</p>
+                </figcaption>
+
+                <blockquote className="font-display text-[clamp(1.2rem,2.3vw,1.65rem)] leading-[1.32] font-medium tracking-[-0.015em] text-bone">
                   {t.quote}
                 </blockquote>
-                <figcaption className="mt-auto flex items-center gap-3 pt-8">
-                  <span aria-hidden className="h-px w-6 bg-line-strong" />
-                  <span className="text-[14px] text-ink-2">
-                    {t.role}
-                    <span className="text-ink-3"> · {t.org}</span>
-                  </span>
-                </figcaption>
               </figure>
             </Reveal>
           ))}

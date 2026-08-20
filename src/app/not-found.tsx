@@ -6,7 +6,7 @@ export const metadata = { title: `Page not found | ${profile.name}` }
 export default function NotFound() {
   return (
     <main className="shell flex min-h-dvh flex-col justify-center py-24">
-      <p className="eyebrow">404</p>
+      <p className="tag">404</p>
       <h1 className="display-2 mt-5">This page does not exist.</h1>
       <p className="lead prose-w mt-5">
         Everything lives on one page. Head back to the start.

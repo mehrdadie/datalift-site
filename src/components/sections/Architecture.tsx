@@ -29,7 +29,7 @@ export default function Architecture() {
   const note = activeSource?.note ?? activeStage?.note ?? activeOutput?.note ?? architecture.body
 
   const line = (on: boolean) => ({
-    stroke: on ? "#70A5FF" : "rgba(255,255,255,0.18)",
+    stroke: on ? "var(--color-signal-hi)" : "var(--color-rule-2)",
     strokeWidth: on ? 1.6 : 1,
     style:
       on && !reduced
@@ -38,19 +38,18 @@ export default function Architecture() {
   })
 
   return (
-    <section id="architecture" className="section border-t border-line bg-[#0a0b0e]">
+    <section id="architecture" className="section border-t border-rule bg-pit">
       <div className="shell">
         <Reveal>
-          <header className="max-w-3xl">
-            <p className="eyebrow mb-5 flex items-center gap-3">
-              <span aria-hidden className="h-px w-6 bg-accent/60" />
-              Architecture
-            </p>
+          <header className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.6fr)] lg:items-end lg:gap-16">
             <h2 className="display-2">
               {architecture.titleLead}
               <br />
-              <span className="text-ink-3">{architecture.titleAccent}</span>
+              <span className="text-bone-3">{architecture.titleAccent}</span>
             </h2>
+            <p className="tag hidden lg:block">
+              Hover or focus a source to trace its path
+            </p>
           </header>
         </Reveal>
 
@@ -122,17 +121,17 @@ export default function Architecture() {
                     onFocus={() => setActive(s.id)}
                     onClick={() => setActive(active === s.id ? null : s.id)}
                     aria-pressed={active === s.id}
-                    className={`flex w-full items-center justify-end gap-2.5 rounded-lg border px-3 py-2 text-right font-mono text-[11px] tracking-[0.1em] uppercase transition-all duration-250 ${
+                    className={`flex w-full items-center justify-between gap-2.5 border px-3 py-2 text-left font-mono text-[11px] tracking-[0.1em] uppercase transition-all duration-250 ${
                       active === s.id
-                        ? "border-accent/50 bg-accent-soft text-ink"
-                        : "border-line bg-card text-ink-2 hover:border-line-strong hover:text-ink"
+                        ? "border-signal/50 bg-signal-soft text-bone"
+                        : "border-rule bg-panel text-bone-2 hover:border-rule-2 hover:text-bone"
                     }`}
                   >
                     {s.label}
                     <span
                       aria-hidden
                       className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                        active === s.id ? "bg-accent" : "bg-ink-3"
+                        active === s.id ? "bg-signal" : "bg-ink-3"
                       }`}
                     />
                   </button>
@@ -153,13 +152,13 @@ export default function Architecture() {
                   onFocus={() => setActive(stage.id)}
                   onClick={() => setActive(active === stage.id ? null : stage.id)}
                   aria-pressed={active === stage.id}
-                  className={`w-[130px] rounded-xl border px-4 py-5 text-center transition-all duration-250 ${
+                  className={`w-[130px] border px-4 py-5 text-center transition-all duration-250 ${
                     active === stage.id
-                      ? "border-accent/55 bg-accent-soft"
-                      : "border-line-strong bg-raised hover:border-accent/35"
+                      ? "border-signal/55 bg-signal-soft"
+                      : "border-rule-2 bg-panel-2 hover:border-signal/35"
                   }`}
                 >
-                  <span className="block font-display text-[13.5px] leading-tight font-semibold text-ink">
+                  <span className="block font-display text-[13.5px] leading-tight font-semibold text-bone">
                     {stage.label}
                   </span>
                 </button>
@@ -179,13 +178,13 @@ export default function Architecture() {
                   onFocus={() => setActive(o.id)}
                   onClick={() => setActive(active === o.id ? null : o.id)}
                   aria-pressed={active === o.id}
-                  className={`w-full rounded-xl border p-4 text-left transition-all duration-250 ${
+                  className={`w-full border p-4 text-left transition-all duration-250 ${
                     active === o.id
-                      ? "border-accent/55 bg-accent-soft"
-                      : "border-line bg-card hover:border-line-strong"
+                      ? "border-signal/55 bg-signal-soft"
+                      : "border-rule bg-panel hover:border-rule-2"
                   }`}
                 >
-                  <span className="block font-display text-[15px] font-semibold text-ink">
+                  <span className="block font-display text-[15px] font-semibold text-bone">
                     {o.label}
                   </span>
                   <ul
@@ -196,7 +195,7 @@ export default function Architecture() {
                     }}
                   >
                     {o.children.map((c) => (
-                      <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-ink-2 uppercase">
+                      <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-bone-2 uppercase">
                         {c}
                       </li>
                     ))}
@@ -210,7 +209,7 @@ export default function Architecture() {
         <Reveal delay={0.1}>
           <p
             aria-live="polite"
-            className="mt-8 hidden max-w-2xl border-l-2 border-accent/50 pl-5 text-[15px] leading-[1.6] text-ink-2 lg:block"
+            className="mt-8 hidden max-w-2xl border-l-2 border-signal pl-5 text-[15px] leading-[1.6] text-bone-2 lg:block"
           >
             {note}
           </p>
@@ -218,37 +217,37 @@ export default function Architecture() {
 
         {/* ── Mobile / tablet: vertical flow ───────────────────────────── */}
         <div className="mt-12 lg:hidden">
-          <p className="mono-label mb-4">Sources</p>
+          <p className="tag mb-4">Sources</p>
           <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {sources.map((s) => (
               <li
                 key={s.id}
-                className="rounded-lg border border-line bg-card px-3 py-2.5 font-mono text-[10.5px] tracking-[0.1em] text-ink-2 uppercase"
+                className="border border-rule bg-panel px-3 py-2.5 font-mono text-[10.5px] tracking-[0.1em] text-bone-2 uppercase"
               >
                 {s.label}
               </li>
             ))}
           </ul>
 
-          <div aria-hidden className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-accent/50 to-line" />
+          <div aria-hidden className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-signal to-rule" />
 
           {stages.map((stage) => (
             <div key={stage.id}>
-              <div className="rounded-xl border border-accent/30 bg-accent-soft px-4 py-4">
-                <p className="font-display text-[15px] font-semibold text-ink">{stage.label}</p>
-                <p className="mt-1.5 text-[13.5px] leading-snug text-ink-2">{stage.note}</p>
+              <div className="border border-signal/40 bg-signal-soft px-4 py-4">
+                <p className="font-display text-[15px] font-semibold text-bone">{stage.label}</p>
+                <p className="mt-1.5 text-[13.5px] leading-snug text-bone-2">{stage.note}</p>
               </div>
-              <div aria-hidden className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-accent/50 to-line" />
+              <div aria-hidden className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-signal to-rule" />
             </div>
           ))}
 
           <ul className="grid gap-3 sm:grid-cols-2">
             {outputs.map((o) => (
-              <li key={o.id} className="rounded-xl border border-line bg-card p-4">
-                <p className="font-display text-[15px] font-semibold text-ink">{o.label}</p>
+              <li key={o.id} className="border border-rule bg-panel p-4">
+                <p className="font-display text-[15px] font-semibold text-bone">{o.label}</p>
                 <ul className="mt-2.5 space-y-1">
                   {o.children.map((c) => (
-                    <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-ink-3 uppercase">
+                    <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-bone-3 uppercase">
                       {c}
                     </li>
                   ))}
@@ -257,7 +256,7 @@ export default function Architecture() {
             ))}
           </ul>
 
-          <p className="mt-8 border-l-2 border-accent/50 pl-5 text-[15px] leading-[1.6] text-ink-2">
+          <p className="mt-8 border-l-2 border-signal pl-5 text-[15px] leading-[1.6] text-bone-2">
             {architecture.body}
           </p>
         </div>

@@ -17,25 +17,22 @@ export default function Positioning() {
   const points = positioning.satellites.map((label, i) => ({ label, ...polar(i, total) }))
 
   return (
-    <section className="section border-t border-line">
+    <section className="section border-t border-rule">
       <div className="shell grid items-center gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
         <Reveal>
           <div>
-            <p className="eyebrow mb-5 flex items-center gap-3">
-              <span aria-hidden className="h-px w-6 bg-accent/60" />
-              Positioning
-            </p>
+            <p className="marker mb-6">Positioning</p>
             <h2 className="display-2">
               {positioning.titleLead}
               <br />
-              <span className="text-accent">{positioning.titleAccent}</span>
+              <span className="text-signal">{positioning.titleAccent}</span>
             </h2>
             <p className="lead prose-w mt-7">{positioning.body}</p>
 
             <ul className="mt-9 grid grid-cols-2 gap-x-6 gap-y-2.5 sm:hidden">
               {positioning.satellites.map((s) => (
-                <li key={s} className="mono-label flex items-center gap-2">
-                  <span aria-hidden className="h-1 w-1 rounded-full bg-accent/70" />
+                <li key={s} className="tag flex items-center gap-2">
+                  <span aria-hidden className="h-1 w-1 rounded-full bg-signal/70" />
                   {s}
                 </li>
               ))}
@@ -54,7 +51,7 @@ export default function Positioning() {
               className="absolute inset-0 rounded-full"
               style={{
                 background:
-                  "radial-gradient(46% 46% at 50% 50%, rgba(76,141,255,0.13), transparent 70%)",
+                  "radial-gradient(46% 46% at 50% 50%, rgba(229,160,60,0.12), transparent 70%)",
               }}
             />
 
@@ -64,7 +61,7 @@ export default function Positioning() {
                 cy="50"
                 r={R}
                 fill="none"
-                stroke="rgba(255,255,255,0.05)"
+                stroke="var(--color-rule)"
                 strokeWidth="0.3"
               />
               {points.map((p, i) => (
@@ -74,8 +71,8 @@ export default function Positioning() {
                   y1={50}
                   x2={p.x}
                   y2={p.y}
-                  stroke="#4C8DFF"
-                  strokeOpacity="0.34"
+                  stroke="var(--color-signal)"
+                  strokeOpacity="0.5"
                   strokeWidth="0.4"
                   initial={
                     reduced
@@ -96,7 +93,7 @@ export default function Positioning() {
             {points.map((p) => (
               <span
                 key={p.label}
-                className="absolute -translate-x-1/2 -translate-y-1/2 rounded-lg border border-line bg-card px-2.5 py-1.5 font-mono text-[10px] tracking-[0.12em] whitespace-nowrap text-ink-2 uppercase"
+                className="absolute -translate-x-1/2 -translate-y-1/2 border border-rule bg-panel px-2.5 py-1.5 font-mono text-[10px] tracking-[0.12em] whitespace-nowrap text-bone-2 uppercase"
                 style={{ left: `${p.x}%`, top: `${p.y}%` }}
               >
                 {p.label}
@@ -104,14 +101,14 @@ export default function Positioning() {
             ))}
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="rounded-2xl border border-accent/35 bg-accent-soft px-5 py-4 text-center backdrop-blur-sm">
+              <div className="border border-signal/50 bg-signal-soft px-5 py-4 text-center backdrop-blur-sm">
                 {positioning.centre.map((line, i) => (
                   <p
                     key={line}
                     className={
                       i === 0
-                        ? "font-display text-[13px] font-semibold tracking-[0.02em] text-ink"
-                        : "font-display text-[13px] font-semibold tracking-[0.02em] text-accent"
+                        ? "font-display text-[13px] font-semibold tracking-[0.02em] text-bone"
+                        : "font-display text-[13px] font-semibold tracking-[0.02em] text-signal"
                     }
                   >
                     {line}

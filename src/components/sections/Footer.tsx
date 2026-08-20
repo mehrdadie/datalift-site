@@ -2,19 +2,19 @@ import { profile } from "@/content/profile"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-surface">
+    <footer className="border-t border-rule">
       <div className="shell flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div>
-          <p className="font-display text-[17px] font-semibold tracking-[-0.02em] text-ink">
+          <p className="font-display text-[17px] font-semibold tracking-[-0.01em] text-bone">
             {profile.name}
           </p>
-          <p className="mt-2 max-w-xs text-[14px] leading-snug text-ink-3">{profile.role}</p>
+          <p className="mt-2 max-w-xs text-[14px] leading-snug text-bone-3">{profile.role}</p>
         </div>
 
         <nav aria-label="Footer" className="flex flex-col gap-3 md:items-end">
           <a
             href={`mailto:${profile.email}`}
-            className="text-[15px] text-ink-2 transition-colors hover:text-ink"
+            className="font-mono text-[13px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
           >
             {profile.email}
           </a>
@@ -22,15 +22,15 @@ export default function Footer() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="text-[15px] text-ink-2 transition-colors hover:text-ink"
+            className="font-mono text-[13px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
           >
             LinkedIn
           </a>
         </nav>
       </div>
 
-      <div className="border-t border-line">
-        <div className="shell flex flex-col gap-2 py-6 text-[13px] text-ink-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-rule">
+        <div className="shell flex flex-col gap-2 py-6 text-[13px] text-bone-3 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {profile.name}</p>
           <p>{profile.location}</p>
         </div>

@@ -1,35 +1,30 @@
 import { platforms } from "@/content/profile"
 
+/**
+ * A patch panel, not a logo carousel. Every platform is labelled with where it
+ * sits in the chain, so the strip states a fact instead of scrolling past.
+ */
 export default function PlatformStrip() {
-  const row = [...platforms.items, ...platforms.items]
-
   return (
-    <section aria-label="Platforms I work with" className="hairline border-b border-line py-10">
-      <div className="shell">
-        <p className="mono-label mb-7">{platforms.title}</p>
+    <section aria-label="Platforms I work with" className="border-y border-rule bg-ground-2">
+      <div className="shell flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 py-6">
+        <h2 className="font-display text-[17px] font-semibold text-bone">{platforms.title}</h2>
+        <p className="tag">{platforms.note}</p>
       </div>
 
-      <div
-        className="relative overflow-hidden"
-        style={{
-          maskImage:
-            "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-        }}
-      >
-        <ul className="animate-marquee flex w-max items-center gap-10 pr-10 md:gap-14">
-          {row.map((name, i) => (
-            <li
-              key={`${name}-${i}`}
-              aria-hidden={i >= platforms.items.length}
-              className="font-display text-[17px] font-medium whitespace-nowrap text-ink-3 transition-colors duration-300 hover:text-ink-2 md:text-[19px]"
-            >
-              {name}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="grid grid-cols-2 border-t border-rule sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8">
+        {platforms.items.map((item) => (
+          <li
+            key={item.name}
+            className="group -mt-px -ml-px border-t border-l border-rule px-4 py-5 transition-colors hover:bg-panel"
+          >
+            <p className="tag transition-colors group-hover:text-signal">{item.kind}</p>
+            <p className="mt-2.5 font-display text-[15px] font-medium text-bone-2 transition-colors group-hover:text-bone">
+              {item.name}
+            </p>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
