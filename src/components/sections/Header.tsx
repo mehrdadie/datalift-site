@@ -35,7 +35,7 @@ export default function Header() {
       }`}
     >
       <div className="shell flex h-[64px] items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <a href="/#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span aria-hidden className="h-2.5 w-2.5 bg-signal" />
           <span className="font-display text-[16px] font-semibold tracking-[-0.01em] text-bone">
             {profile.name}
@@ -50,7 +50,7 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary btn-sm">
+          <a href="/#contact" className="btn btn-primary btn-sm">
             Discuss a project
           </a>
         </nav>
@@ -80,7 +80,7 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary mt-6 w-full">
+          <a href="/#contact" onClick={() => setOpen(false)} className="btn btn-primary mt-6 w-full">
             Discuss a project
           </a>
         </div>

@@ -72,11 +72,21 @@ That file also drives two of the diagrams: `heroNodes` / `heroEdges` position th
 visualisation, and `architecture.sources / stages / outputs` build the interactive
 architecture diagram. Add a source to the array and the diagram redraws itself.
 
-## Sections
+## Pages
 
-Header · Hero · Platform strip · Problems I fix · Selected outcomes · Positioning ·
-Capabilities · Interactive architecture · How I work · About · Client feedback ·
-Where I am most useful · Final CTA · Footer.
+**`/`** — Header · Hero · Platform strip · Problems I fix · Selected outcomes ·
+Positioning · Capabilities · Interactive architecture · How I work · About ·
+Client feedback · Where I am most useful · Final CTA · Footer.
+
+**`/case-studies`** — all eight studies, each tagged with the outcome it was
+judged against, with a contents index in the masthead. The home page shows the
+three marked `featured: true` in `caseStudies`; the page shows every one. Both
+render through the same `CaseStudyArticle` component, so they cannot drift.
+
+Adding a case study means adding one object to `caseStudies` in
+`src/content/profile.ts`. Set `visual` to one of `workflow`, `customer`,
+`attribution`, `quality`, `dormant`, `calls` or `matrix` — the workflow visual
+also takes a `workflow` spec and renders that case study's own steps.
 
 ## Before you publish — three placeholders to replace
 

@@ -14,11 +14,12 @@ export const profile = {
   location: "Working internationally",
 } as const
 
+/** Rooted so the nav works from /case-studies as well as the home page. */
 export const nav = [
-  { label: "Work", href: "#work" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Approach", href: "#approach" },
-  { label: "About", href: "#about" },
+  { label: "Work", href: "/#work" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Approach", href: "/#approach" },
+  { label: "About", href: "/#about" },
 ] as const
 
 export const hero = {
@@ -171,15 +172,49 @@ export const problems = {
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- * DRAFT CONTENT — written as illustrative examples of the type of work, not as
- * claims about identified clients. Figures are representative. Replace with real
- * engagement numbers (and named clients, where permitted) before publishing.
+ * DRAFT CONTENT — worked examples of the kinds of engagement described in the
+ * capability set, not accounts of identified clients. Structure and figures are
+ * representative. Replace with real engagement numbers (and named clients,
+ * where permitted) before publishing.
+ *
+ * `featured` picks the three that appear on the home page; the rest live on
+ * /case-studies. `outcome` maps to the outcome framework — revenue, cost, time,
+ * visibility, reliability — and drives the index at the top of that page.
  * ─────────────────────────────────────────────────────────────────────────────
  */
-export const caseStudies = [
+export type WorkflowSpec = {
+  label: string
+  beforeLabel: string
+  afterLabel: string
+  before: string[]
+  after: string[]
+  tail: { top: string; bottom: string }
+}
+
+export type CaseStudy = {
+  id: string
+  /** Featured studies appear on the home page; all of them appear on /case-studies. */
+  featured: boolean
+  outcome: "Revenue" | "Cost" | "Time" | "Visibility" | "Reliability"
+  metric: string
+  metricUnit: string
+  title: string
+  sector: string
+  problem: string
+  change: string
+  outcomeText: string
+  results: { value: string; label: string }[]
+  stack: string[]
+  visual: "workflow" | "customer" | "attribution" | "quality" | "dormant" | "calls" | "matrix"
+  /** Only the workflow visual needs one; it renders the case study's own steps. */
+  workflow?: WorkflowSpec
+}
+
+export const caseStudies: CaseStudy[] = [
   {
     id: "reporting-automation",
-    index: "01",
+    featured: true,
+    outcome: "Time",
     metric: "30 hrs → 2 hrs",
     metricUnit: "per week",
     title: "Reporting Automation",
@@ -188,7 +223,7 @@ export const caseStudies = [
       "A recurring management reporting process relied on manual exports from five platforms, spreadsheet updates, data checks and repeated reconciliation. By the time the numbers were agreed, the week they described was already over.",
     change:
       "The workflow was rebuilt around scheduled data pipelines, a modelled reporting layer with agreed KPI definitions, automated validation rules and alerting when a source stops delivering.",
-    outcome:
+    outcomeText:
       "Reporting preparation dropped from roughly 30 hours per week to around 2 hours of review and validation. Numbers now arrive before the meeting instead of after it.",
     results: [
       { value: "93%", label: "Less manual preparation" },
@@ -197,10 +232,19 @@ export const caseStudies = [
     ],
     stack: ["BigQuery", "n8n", "Power BI", "Google Ads", "Meta Ads", "Stripe"],
     visual: "workflow",
+    workflow: {
+      label: "Weekly reporting process",
+      beforeLabel: "Before — manual — ~30 hrs / week",
+      afterLabel: "After — automated — ~2 hrs / week",
+      before: ["Export", "Clean", "Merge", "Check", "Fix", "Send"],
+      after: ["Pipeline", "Validate", "Publish"],
+      tail: { top: "Human review", bottom: "2 hrs" },
+    },
   },
   {
     id: "lead-sales-intelligence",
-    index: "02",
+    featured: true,
+    outcome: "Visibility",
     metric: "One customer.",
     metricUnit: "One view.",
     title: "360° Lead & Sales Intelligence",
@@ -209,7 +253,7 @@ export const caseStudies = [
       "CRM records, call activity, marketing source data and payment history lived in four systems. Nobody could answer a simple question — what actually happened with this customer — without opening four tabs and guessing.",
     change:
       "Lead, call, opportunity and payment signals were resolved to a single customer identity, cleaned of duplicates, and combined into one unified view with follow-up quality and pipeline movement made visible.",
-    outcome:
+    outcomeText:
       "Sales teams and management gained one clear picture of customer activity, follow-up and opportunity status — including the leads that had never been contacted at all.",
     results: [
       { value: "4 → 1", label: "Systems to check" },
@@ -221,7 +265,8 @@ export const caseStudies = [
   },
   {
     id: "revenue-attribution",
-    index: "03",
+    featured: true,
+    outcome: "Revenue",
     metric: "Marketing → Revenue",
     metricUnit: "end to end",
     title: "Revenue Attribution",
@@ -230,7 +275,7 @@ export const caseStudies = [
       "Marketing spend, lead activity and closed revenue were held in separate systems with inconsistent campaign naming. Channel performance was argued about monthly and never settled.",
     change:
       "Campaign, lead, opportunity and payment data were connected through one attribution model, with enforced naming standards, validated tracking and revenue joined back to the original acquisition source.",
-    outcome:
+    outcomeText:
       "Management could finally see which channels and campaigns were contributing revenue rather than volume — and move budget on evidence instead of opinion.",
     results: [
       { value: "Spend → £", label: "Joined at customer level" },
@@ -240,7 +285,137 @@ export const caseStudies = [
     stack: ["Google Ads", "Meta Ads", "LinkedIn Ads", "GA4", "BigQuery", "Stripe"],
     visual: "attribution",
   },
-] as const
+  {
+    id: "crm-data-quality",
+    featured: false,
+    outcome: "Reliability",
+    metric: "31% → 0.4%",
+    metricUnit: "duplicate records",
+    title: "CRM Data Recovery",
+    sector: "B2B services group, two prior migrations",
+    problem:
+      "Years of imports, manual entry and two migrations had left duplicate companies, contacts attached to the wrong parent, ownership that no longer matched the team, and campaign names that never agreed with the ad platform. Every report began with an argument about the data rather than the result.",
+    change:
+      "Deduplication on deterministic keys first and fuzzy matching second, with a documented survivorship rule for which value wins. Ownership was rebuilt from an agreed source of record, campaign naming was enforced at the point of entry, and the validation now runs nightly instead of once during a cleanup project.",
+    outcomeText:
+      "The CRM moved from a system people worked around to the one people quote. The duplicate rate stays under half a percent because the rules run continuously rather than as a one-off exercise.",
+    results: [
+      { value: "0.4%", label: "Duplicate rate, sustained" },
+      { value: "Nightly", label: "Validation instead of ad-hoc" },
+      { value: "1", label: "Agreed source of record" },
+    ],
+    stack: ["Salesforce", "Python", "BigQuery", "n8n"],
+    visual: "quality",
+  },
+  {
+    id: "dormant-revenue",
+    featured: false,
+    outcome: "Revenue",
+    metric: "£240k",
+    metricUnit: "surfaced from records already owned",
+    title: "Dormant Opportunity Recovery",
+    sector: "Subscription business, five years of history",
+    problem:
+      "Leads that were never contacted, opportunities abandoned mid-pipeline, and customers who had lapsed quietly. All of it sat in systems nobody queried, because answering the question meant joining four of them by hand.",
+    change:
+      "Every dormant record was scored against last contact, acquisition cost, previous value and the stage it stalled at — then surfaced as a working queue with the reason attached, refreshed each morning rather than exported once.",
+    outcomeText:
+      "The sales team gets a daily list of real opportunities drawn from data the business had already paid for, instead of a static export that goes stale within a week.",
+    results: [
+      { value: "4,800", label: "Records re-scored" },
+      { value: "£240k", label: "Pipeline surfaced" },
+      { value: "Daily", label: "Queue refresh" },
+    ],
+    stack: ["Salesforce", "Chargebee", "BigQuery", "Power BI"],
+    visual: "dormant",
+  },
+  {
+    id: "call-intelligence",
+    featured: false,
+    outcome: "Visibility",
+    metric: "Every call,",
+    metricUnit: "actually read",
+    title: "Call Intelligence",
+    sector: "High-volume inbound sales team",
+    problem:
+      "Several hundred calls a week, each logged as a duration and a disposition picked from a dropdown. Managers sampled a handful; the rest was invisible. Objections, competitor mentions and pricing pushback never reached a report.",
+    change:
+      "Calls are transcribed, then classified against a taxonomy the sales team agreed to — outcome, objection, competitor named, next step committed — and written back onto the CRM record. The model summarises and tags; the rep still decides what happens next.",
+    outcomeText:
+      "Management can see what customers actually said, at full volume rather than by sample. Coaching moved from anecdote to the objection the numbers kept pointing at.",
+    results: [
+      { value: "100%", label: "Of calls classified" },
+      { value: "6", label: "Objection categories tracked" },
+      { value: "Same day", label: "Written back to the record" },
+    ],
+    stack: ["Aircall", "Python", "Salesforce", "BigQuery"],
+    visual: "calls",
+  },
+  {
+    id: "one-warehouse",
+    featured: false,
+    outcome: "Visibility",
+    metric: "9 sources.",
+    metricUnit: "One model.",
+    title: "One Warehouse, Three Brands",
+    sector: "Group operating three trading brands",
+    problem:
+      "Three brands, three CRMs, two ad accounts each, and a finance system that knew nothing about any of them. Group-level questions took a week and produced a spreadsheet nobody fully trusted.",
+    change:
+      "A warehouse with one modelled layer above it: shared customer and campaign dimensions, brand carried as a column rather than as a separate report, and every definition agreed in writing before anything was built.",
+    outcomeText:
+      "Group and brand numbers now come out of the same model, so they cannot disagree with each other. New sources plug into the existing shape instead of starting another spreadsheet.",
+    results: [
+      { value: "9", label: "Sources conformed" },
+      { value: "1", label: "Shared dimensional model" },
+      { value: "Both", label: "Group and brand from one source" },
+    ],
+    stack: ["BigQuery", "Python", "n8n", "Power BI", "Salesforce", "HubSpot"],
+    visual: "matrix",
+  },
+  {
+    id: "lead-routing",
+    featured: false,
+    outcome: "Time",
+    metric: "2 hrs → 4 min",
+    metricUnit: "first response",
+    title: "Lead Routing & Follow-up",
+    sector: "Inbound-led services business",
+    problem:
+      "New enquiries landed in a shared inbox and were picked up by whoever noticed first. Response time depended on the hour of the day, and nobody could see which leads had been left alone.",
+    change:
+      "Validation, enrichment and routing on rules the team agreed — territory, value band and current load — with an SLA clock running on every record and an escalation when it expires.",
+    outcomeText:
+      "First response fell from around two hours to four minutes. Leads that slip are now visible before the week ends rather than after the quarter does.",
+    results: [
+      { value: "4 min", label: "Median first response" },
+      { value: "0", label: "Leads unassigned overnight" },
+      { value: "Per rep", label: "SLA performance visible" },
+    ],
+    stack: ["GoHighLevel", "Salesforce", "n8n", "Slack"],
+    visual: "workflow",
+    workflow: {
+      label: "Inbound lead handling",
+      beforeLabel: "Before — shared inbox — ~2 hrs",
+      afterLabel: "After — routed on rules — ~4 min",
+      before: ["Arrives", "Noticed", "Claimed", "Checked", "Assigned", "Called"],
+      after: ["Validate", "Enrich", "Route"],
+      tail: { top: "SLA clock", bottom: "4 min" },
+    },
+  },
+]
+
+export const featuredCaseStudies = caseStudies.filter((c) => c.featured)
+
+export const caseStudiesPage = {
+  eyebrow: "Case studies",
+  title: "Eight problems, and what I did about them.",
+  intro:
+    "Worked examples of the engagements I take on, each tagged with the outcome it was judged against. Every one crosses more than one system — which is usually why it landed with me rather than with a specialist inside one of them.",
+  disclosure:
+    "These are representative of the work rather than accounts of named clients. Structure, sequence and order of magnitude reflect real engagements; the figures are illustrative.",
+  indexLabel: "On this page",
+} as const
 
 /**
  * Positioning, argued rather than asserted. Four specialists each own a
