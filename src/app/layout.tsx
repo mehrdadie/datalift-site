@@ -24,9 +24,9 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 })
 
-const title = `${profile.name} | Data, Automation & Growth Systems Consultant`
+const title = `${profile.name} | Revenue Operations & Data Consultant`
 const description =
-  "Independent data, automation and growth systems consultant helping businesses connect CRM, marketing, sales and operational data into reliable reporting and automated workflows."
+  "Independent revenue operations and data consultant. I connect CRM, marketing, payments and reporting so your numbers finally agree — attribution, data quality and the automation in between."
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.url),
@@ -35,19 +35,30 @@ export const metadata: Metadata = {
   applicationName: profile.name,
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,
+  /**
+   * Ordered by how the market actually searches, not by how the practice
+   * describes itself — see docs/keyword-research.md. "Growth systems" stays the
+   * brand line in the hero; it has no search demand, so it is not a keyword.
+   */
   keywords: [
-    "data consultant",
-    "automation consultant",
-    "revenue operations",
+    "revenue operations consultant",
+    "RevOps consultant",
+    "marketing attribution consultant",
+    "fractional head of data",
+    "freelance data consultant",
+    "CRM data quality consultant",
+    "lead to revenue reporting",
+    "revenue attribution",
     "marketing analytics",
     "CRM architecture",
-    "business intelligence",
-    "revenue attribution",
-    "system integration",
+    "workflow automation consultant",
+    "systems integration consultant",
     "n8n",
     "BigQuery",
     "Power BI",
     "Salesforce",
+    "GoHighLevel",
+    "Stripe",
   ],
   alternates: { canonical: "/" },
   openGraph: {

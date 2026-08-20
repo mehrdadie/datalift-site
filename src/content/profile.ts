@@ -5,7 +5,7 @@
 
 export const profile = {
   name: "Mehrdad Fashami",
-  role: "Independent Data, Automation & Growth Systems Consultant",
+  role: "Independent Data, Automation & Revenue Operations Consultant",
   shortRole: "Independent Consultant",
   email: "hello@mehrdadfashami.com",
   linkedin: "https://www.linkedin.com/in/mehrdadfashami/",
@@ -450,6 +450,7 @@ export const capabilities = [
       "CRM integrations",
       "Data pipelines",
       "Data warehouses",
+      "CRM data quality",
       "System architecture",
       "Payment integrations",
       "Marketing platform integrations",
@@ -458,10 +459,11 @@ export const capabilities = [
   {
     key: "understand",
     title: "Understand",
-    description: "Turn disconnected activity into useful business intelligence.",
+    description: "Turn disconnected activity into attribution and reporting you can trust.",
     items: [
       "Business intelligence",
       "Revenue attribution",
+      "Lead-to-revenue reporting",
       "Marketing analytics",
       "Customer journey analysis",
       "Sales reporting",
