@@ -54,8 +54,11 @@ export default function Positioning() {
                   {i < seams.length ? (
                     <div className="flex items-start gap-4 py-4 pl-5 sm:pl-8">
                       <span aria-hidden className="mt-[9px] h-px w-6 shrink-0 bg-signal sm:w-9" />
-                      <p className="text-[15.5px] leading-[1.55] text-signal">
-                        <span className="tag mr-2.5 text-bone-3">Seam</span>
+                      {/* Accent marks the seam; the sentence itself stays in
+                          reading colour. Three multi-line amber paragraphs is
+                          more colour than anyone wants to read. */}
+                      <p className="text-[16.5px] leading-[1.6] text-bone">
+                        <span className="tag mr-2.5 text-signal">Seam</span>
                         {seams[i]}
                       </p>
                     </div>
