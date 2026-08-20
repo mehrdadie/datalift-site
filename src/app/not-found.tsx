@@ -1,20 +1,21 @@
-import Link from "next/link";
+import Link from "next/link"
+import { profile } from "@/content/profile"
 
-export default function NotFoundPage() {
+export const metadata = { title: `Page not found | ${profile.name}` }
+
+export default function NotFound() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
-      <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">404</h1>
-      <p className="mt-4 text-secondary text-lg leading-relaxed">
-        The page you are looking for does not exist or has been moved.
+    <main className="shell flex min-h-dvh flex-col justify-center py-24">
+      <p className="eyebrow">404</p>
+      <h1 className="display-2 mt-5">This page does not exist.</h1>
+      <p className="lead prose-w mt-5">
+        Everything lives on one page. Head back to the start.
       </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/" className="inline-flex h-11 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background hover:bg-secondary transition-colors">
-          Back to homepage
-        </Link>
-        <Link href="/work" className="inline-flex h-11 items-center rounded-full border border-border px-5 text-sm font-medium hover:border-foreground transition-colors">
-          View our work
+      <div className="mt-9">
+        <Link href="/" className="btn btn-primary">
+          Back to the homepage
         </Link>
       </div>
-    </div>
-  );
+    </main>
+  )
 }

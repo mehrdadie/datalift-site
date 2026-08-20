@@ -1,48 +1,48 @@
-import { Metadata } from "next";
-import HeroSection from "@/components/HeroSection";
-import StatsStrip from "@/components/StatsStrip";
-import ProblemSection from "@/components/ProblemSection";
-import ServicePreview from "@/components/ServicePreview";
-import FeatureSection from "@/components/FeatureSection";
-import CtaSection from "@/components/CtaSection";
-import SectionLabel from "@/components/SectionLabel";
-import PrimaryButton from "@/components/PrimaryButton";
+import Header from "@/components/sections/Header"
+import Hero from "@/components/sections/Hero"
+import PlatformStrip from "@/components/sections/PlatformStrip"
+import Problems from "@/components/sections/Problems"
+import CaseStudies from "@/components/sections/CaseStudies"
+import Positioning from "@/components/sections/Positioning"
+import Capabilities from "@/components/sections/Capabilities"
+import Architecture from "@/components/sections/Architecture"
+import Process from "@/components/sections/Process"
+import About from "@/components/sections/About"
+import Testimonials from "@/components/sections/Testimonials"
+import BestFit from "@/components/sections/BestFit"
+import FinalCta from "@/components/sections/FinalCta"
+import Footer from "@/components/sections/Footer"
+import StructuredData from "@/components/StructuredData"
 
-export const metadata: Metadata = {
-  title: "Make your data work harder.",
-  description:
-    "Datalift connects business systems, builds reliable reporting and automates repetitive work so growing teams can make faster, clearer decisions.",
-  alternates: {
-    canonical: "/",
-  },
-};
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="flex flex-col">
-      <HeroSection />
-      <StatsStrip />
-      <ProblemSection />
-      <ServicePreview />
-      <FeatureSection />
-      <CtaSection />
+    <>
+      <StructuredData />
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
 
-      <section className="section-full border-t border-border bg-white">
-        <div className="section-content py-20">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div className="max-w-xl">
-              <SectionLabel>Work</SectionLabel>
-              <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
-                Real systems. Useful outcomes.
-              </h2>
-              <p className="mt-4 text-secondary text-lg leading-relaxed">
-                Explore how Datalift approaches reporting, reconciliation, operational visibility and automation across real business workflows.
-              </p>
-            </div>
-            <PrimaryButton href="/work">View all work</PrimaryButton>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+      <Header />
+
+      <main id="main">
+        <Hero />
+        <PlatformStrip />
+        <Problems />
+        <CaseStudies />
+        <Positioning />
+        <Capabilities />
+        <Architecture />
+        <Process />
+        <About />
+        <Testimonials />
+        <BestFit />
+        <FinalCta />
+      </main>
+
+      <Footer />
+    </>
+  )
 }
