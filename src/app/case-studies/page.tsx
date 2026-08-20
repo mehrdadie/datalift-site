@@ -11,17 +11,17 @@ const title = `Case studies | ${profile.name}`
 
 export const metadata: Metadata = {
   title,
-  description: caseStudiesPage.intro,
+  description: caseStudiesPage.metaDescription,
   alternates: { canonical: "/case-studies" },
   openGraph: {
     type: "article",
     url: `${profile.url}/case-studies`,
     siteName: profile.name,
     title,
-    description: caseStudiesPage.intro,
+    description: caseStudiesPage.metaDescription,
     locale: "en_GB",
   },
-  twitter: { card: "summary_large_image", title, description: caseStudiesPage.intro },
+  twitter: { card: "summary_large_image", title, description: caseStudiesPage.metaDescription },
 }
 
 export default function CaseStudiesPage() {

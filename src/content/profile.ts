@@ -409,6 +409,9 @@ export const caseStudiesPage = {
   title: "Eight problems, and what I did about them.",
   intro:
     "Engagements I have taken on, each tagged with the outcome it was judged against. Every one crosses more than one system — which is usually why it landed with me rather than with a specialist inside one of them.",
+  /** Separate from `intro`: search engines truncate past ~160 characters. */
+  metaDescription:
+    "Eight engagements in revenue operations, attribution and CRM data quality — the problem, the work, and what changed. Each one crosses several systems.",
   disclosure:
     "Client names are withheld under confidentiality, so each engagement is identified by sector. Everything else — the problem, the work and the result — is as it happened.",
   indexLabel: "On this page",

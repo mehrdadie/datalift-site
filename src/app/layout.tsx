@@ -25,8 +25,9 @@ const jetbrains = JetBrains_Mono({
 })
 
 const title = `${profile.name} | Revenue Operations & Data Consultant`
+/** Kept under 160 characters — search engines truncate past that. */
 const description =
-  "Independent revenue operations and data consultant. I connect CRM, marketing, payments and reporting so your numbers finally agree — attribution, data quality and the automation in between."
+  "Independent revenue operations and data consultant. I connect CRM, marketing, payments and reporting so your numbers finally agree — and stay that way."
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.url),
