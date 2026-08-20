@@ -5,7 +5,7 @@ import { useReducedMotion } from "framer-motion"
 import { architecture } from "@/content/profile"
 import Reveal from "@/components/ui/Reveal"
 
-const SRC_X = 24.5 // where a source line leaves the label column
+const SRC_X = 19 // where a source line leaves the label column
 const LAYER = { l: 35, r: 49, y: 50 }
 const LOGIC = { l: 57, r: 71, y: 50 }
 const OUT_X = 76
@@ -109,7 +109,7 @@ export default function Architecture() {
             </svg>
 
             {/* sources */}
-            <ul className="absolute inset-y-0 left-0 w-[23%]">
+            <ul className="absolute inset-y-0 left-0 w-[18%]">
               {sources.map((s, i) => (
                 <li
                   key={s.id}
