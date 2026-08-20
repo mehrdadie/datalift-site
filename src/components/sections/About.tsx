@@ -1,19 +1,24 @@
+import Image from "next/image"
+
 import { about, profile } from "@/content/profile"
 import Reveal from "@/components/ui/Reveal"
 
 /**
- * Portrait placeholder: a bone plate with the monogram, sized like a photo so
- * a real one drops straight in. Swap for next/image when there is a file.
+ * The portrait sits in a 4:5 frame to match the source crop, so the image
+ * fills it without cropping the face. `sizes` mirrors the grid: it is a
+ * narrow sticky column on large screens and full width below the breakpoint.
  */
 function Portrait() {
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden bg-paper-2 text-graphite">
-      <div className="absolute inset-0 flex flex-col justify-between p-5">
-        <span className="tag text-graphite/55">Portrait — to be supplied</span>
-        <p className="font-display text-[4.5rem] leading-[0.8] font-semibold tracking-[-0.05em] text-graphite/80">
-          MF
-        </p>
-      </div>
+    <div className="relative aspect-[4/5] w-full overflow-hidden bg-panel">
+      <Image
+        src="/images/mehrdad-fashami.jpg"
+        alt={`${profile.name}, ${profile.role}`}
+        fill
+        sizes="(min-width: 1024px) 30vw, 100vw"
+        className="object-cover"
+        priority={false}
+      />
     </div>
   )
 }
