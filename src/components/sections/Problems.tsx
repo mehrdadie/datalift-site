@@ -30,17 +30,17 @@ export default function Problems() {
               <article className="group grid gap-8 border-b border-rule py-9 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] md:gap-16 md:py-11">
                 <div>
                   <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-[12px] tracking-[0.16em] text-signal">
+                    <span className="font-mono text-[12px] tracking-[0.11em] text-signal">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="display-3">{card.title}</h3>
                   </div>
 
-                  <p className="mt-4 max-w-lg pl-[52px] text-[15.5px] leading-[1.6] text-bone-2">
+                  <p className="mt-4 max-w-lg pl-[52px] text-[16.5px] leading-[1.68] text-bone-2">
                     {card.body}
                   </p>
 
-                  <p className="mt-6 flex items-baseline gap-3 pl-[52px] text-[15px] text-signal">
+                  <p className="mt-6 flex items-baseline gap-3 pl-[52px] text-[16px] text-signal">
                     <span
                       aria-hidden
                       className="h-px w-7 shrink-0 translate-y-[-4px] bg-signal transition-all duration-300 group-hover:w-11"
@@ -64,7 +64,7 @@ export default function Problems() {
                           {row.k}
                         </dt>
                         <dd
-                          className={`font-mono text-[13.5px] tabular-nums ${
+                          className={`font-mono text-[14.5px] tabular-nums ${
                             row.bad ? "text-oxide" : "text-bone-2"
                           }`}
                         >

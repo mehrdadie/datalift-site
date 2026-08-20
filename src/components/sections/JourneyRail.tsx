@@ -80,7 +80,7 @@ export default function JourneyRail() {
               borderTop: "6px solid var(--color-signal)",
             }}
           />
-          <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-ground px-4 font-mono text-[10.5px] tracking-[0.16em] text-signal uppercase">
+          <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-ground px-4 font-mono text-[11.5px] tracking-[0.11em] text-signal uppercase">
             Revenue joined back to the click
           </span>
         </div>
@@ -119,7 +119,7 @@ export default function JourneyRail() {
                   </span>
                   <span
                     aria-hidden
-                    className={`block font-mono text-[10.5px] tracking-[0.14em] tabular-nums transition-colors ${
+                    className={`block font-mono text-[11.5px] tracking-[0.1em] tabular-nums transition-colors ${
                       passed ? "text-signal" : "text-bone-3"
                     }`}
                   >
@@ -127,7 +127,7 @@ export default function JourneyRail() {
                   </span>
                   <span
                     aria-hidden
-                    className={`mt-2.5 block font-display text-[14px] leading-tight font-semibold transition-colors ${
+                    className={`mt-2.5 block font-display text-[15px] leading-tight font-semibold transition-colors ${
                       on ? "text-bone" : "text-bone-2 group-hover:text-bone"
                     }`}
                   >
@@ -135,7 +135,7 @@ export default function JourneyRail() {
                   </span>
                   <span
                     aria-hidden
-                    className={`mt-1 block font-mono text-[10.5px] tracking-[0.1em] uppercase transition-colors ${
+                    className={`mt-1 block font-mono text-[11.5px] tracking-[0.1em] uppercase transition-colors ${
                       on ? "text-signal" : "text-bone-3"
                     }`}
                   >
@@ -149,7 +149,7 @@ export default function JourneyRail() {
 
         <p
           aria-hidden
-          className="mt-8 min-h-[3rem] max-w-2xl border-l-2 border-signal pl-5 text-[15.5px] leading-[1.55] text-bone-2"
+          className="mt-8 min-h-[3rem] max-w-2xl border-l-2 border-signal pl-5 text-[16.5px] leading-[1.62] text-bone-2"
         >
           {stop.detail}
         </p>
@@ -180,17 +180,17 @@ export default function JourneyRail() {
                   Step {i + 1} of {N}, {s.t}: {s.system} — {s.event}. {s.detail}
                 </span>
                 <span aria-hidden className="flex items-baseline gap-3">
-                  <span className="w-[42px] shrink-0 font-mono text-[10.5px] tracking-[0.1em] text-bone-3 tabular-nums">
+                  <span className="w-[42px] shrink-0 font-mono text-[11.5px] tracking-[0.1em] text-bone-3 tabular-nums">
                     {s.t}
                   </span>
                   <span
-                    className={`font-display text-[15px] font-semibold ${
+                    className={`font-display text-[16px] font-semibold ${
                       on ? "text-bone" : "text-bone-2"
                     }`}
                   >
                     {s.event}
                   </span>
-                  <span className="ml-auto font-mono text-[10px] tracking-[0.1em] text-bone-3 uppercase">
+                  <span className="ml-auto font-mono text-[11px] tracking-[0.1em] text-bone-3 uppercase">
                     {s.system}
                   </span>
                 </span>
@@ -200,7 +200,7 @@ export default function JourneyRail() {
         })}
       </ol>
 
-      <p aria-hidden className="mt-6 text-[15px] leading-[1.55] text-bone-2 md:hidden">
+      <p aria-hidden className="mt-6 text-[16px] leading-[1.62] text-bone-2 md:hidden">
         {stop.detail}
       </p>
     </div>

@@ -158,7 +158,7 @@ export default function Architecture() {
                       : "border-rule-2 bg-panel-2 hover:border-signal/35"
                   }`}
                 >
-                  <span className="block font-display text-[13.5px] leading-tight font-semibold text-bone">
+                  <span className="block font-display text-[14.5px] leading-tight font-semibold text-bone">
                     {stage.label}
                   </span>
                 </button>
@@ -184,7 +184,7 @@ export default function Architecture() {
                       : "border-rule bg-panel hover:border-rule-2"
                   }`}
                 >
-                  <span className="block font-display text-[15px] font-semibold text-bone">
+                  <span className="block font-display text-[16px] font-semibold text-bone">
                     {o.label}
                   </span>
                   <ul
@@ -195,7 +195,7 @@ export default function Architecture() {
                     }}
                   >
                     {o.children.map((c) => (
-                      <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-bone-2 uppercase">
+                      <li key={c} className="font-mono text-[11.5px] tracking-[0.08em] text-bone-2 uppercase">
                         {c}
                       </li>
                     ))}
@@ -209,7 +209,7 @@ export default function Architecture() {
         <Reveal delay={0.1}>
           <p
             aria-live="polite"
-            className="mt-8 hidden max-w-2xl border-l-2 border-signal pl-5 text-[15px] leading-[1.6] text-bone-2 lg:block"
+            className="mt-8 hidden max-w-2xl border-l-2 border-signal pl-5 text-[16px] leading-[1.68] text-bone-2 lg:block"
           >
             {note}
           </p>
@@ -222,7 +222,7 @@ export default function Architecture() {
             {sources.map((s) => (
               <li
                 key={s.id}
-                className="border border-rule bg-panel px-3 py-2.5 font-mono text-[10.5px] tracking-[0.1em] text-bone-2 uppercase"
+                className="border border-rule bg-panel px-3 py-2.5 font-mono text-[11.5px] tracking-[0.1em] text-bone-2 uppercase"
               >
                 {s.label}
               </li>
@@ -234,8 +234,8 @@ export default function Architecture() {
           {stages.map((stage) => (
             <div key={stage.id}>
               <div className="border border-signal/40 bg-signal-soft px-4 py-4">
-                <p className="font-display text-[15px] font-semibold text-bone">{stage.label}</p>
-                <p className="mt-1.5 text-[13.5px] leading-snug text-bone-2">{stage.note}</p>
+                <p className="font-display text-[16px] font-semibold text-bone">{stage.label}</p>
+                <p className="mt-1.5 text-[14.5px] leading-snug text-bone-2">{stage.note}</p>
               </div>
               <div aria-hidden className="mx-auto my-5 h-10 w-px bg-gradient-to-b from-signal to-rule" />
             </div>
@@ -244,10 +244,10 @@ export default function Architecture() {
           <ul className="grid gap-3 sm:grid-cols-2">
             {outputs.map((o) => (
               <li key={o.id} className="border border-rule bg-panel p-4">
-                <p className="font-display text-[15px] font-semibold text-bone">{o.label}</p>
+                <p className="font-display text-[16px] font-semibold text-bone">{o.label}</p>
                 <ul className="mt-2.5 space-y-1">
                   {o.children.map((c) => (
-                    <li key={c} className="font-mono text-[10.5px] tracking-[0.08em] text-bone-3 uppercase">
+                    <li key={c} className="font-mono text-[11.5px] tracking-[0.08em] text-bone-3 uppercase">
                       {c}
                     </li>
                   ))}
@@ -256,7 +256,7 @@ export default function Architecture() {
             ))}
           </ul>
 
-          <p className="mt-8 border-l-2 border-signal pl-5 text-[15px] leading-[1.6] text-bone-2">
+          <p className="mt-8 border-l-2 border-signal pl-5 text-[16px] leading-[1.68] text-bone-2">
             {architecture.body}
           </p>
         </div>

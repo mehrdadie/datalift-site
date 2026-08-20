@@ -39,7 +39,7 @@ export default function FinalCta() {
 
             <a
               href={`mailto:${profile.email}`}
-              className="mt-8 inline-block font-mono text-[13px] tracking-[0.04em] text-bone-2 underline decoration-rule-2 underline-offset-[6px] transition-colors hover:text-signal"
+              className="mt-8 inline-block font-mono text-[14px] tracking-[0.04em] text-bone-2 underline decoration-rule-2 underline-offset-[6px] transition-colors hover:text-signal"
             >
               {profile.email}
             </a>
@@ -54,15 +54,15 @@ export default function FinalCta() {
                 <li key={prompt}>
                   <a
                     href={`mailto:${profile.email}?subject=${encodeURIComponent(prompt)}`}
-                    className="group flex items-baseline gap-5 border-b border-rule py-5 text-[15.5px] text-bone-2 transition-colors hover:text-bone"
+                    className="group flex items-baseline gap-5 border-b border-rule py-5 text-[16.5px] text-bone-2 transition-colors hover:text-bone"
                   >
-                    <span className="font-mono text-[11px] tracking-[0.14em] text-bone-3 transition-colors group-hover:text-signal">
+                    <span className="font-mono text-[11px] tracking-[0.1em] text-bone-3 transition-colors group-hover:text-signal">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span>&ldquo;{prompt}&rdquo;</span>
                     <span
                       aria-hidden
-                      className="ml-auto font-mono text-[13px] text-bone-3 opacity-0 transition-opacity group-hover:opacity-100"
+                      className="ml-auto font-mono text-[14px] text-bone-3 opacity-0 transition-opacity group-hover:opacity-100"
                     >
                       →
                     </span>

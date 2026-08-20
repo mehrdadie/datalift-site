@@ -37,7 +37,7 @@ export default function Header() {
       <div className="shell flex h-[64px] items-center justify-between gap-6">
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span aria-hidden className="h-2.5 w-2.5 bg-signal" />
-          <span className="font-display text-[15px] font-semibold tracking-[-0.01em] text-bone">
+          <span className="font-display text-[16px] font-semibold tracking-[-0.01em] text-bone">
             {profile.name}
           </span>
           <span className="tag hidden lg:inline">{profile.shortRole}</span>

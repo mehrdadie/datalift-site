@@ -35,7 +35,7 @@ export default function Process() {
                   className="absolute top-[13px] left-1 h-[7px] w-[7px] bg-signal md:left-[100px]"
                 />
 
-                <span className="font-mono text-[12px] tracking-[0.16em] text-bone-3 md:pt-1">
+                <span className="font-mono text-[12px] tracking-[0.11em] text-bone-3 md:pt-1">
                   {step.n}
                 </span>
 
@@ -43,10 +43,10 @@ export default function Process() {
                   <h3 className="font-display text-[1.6rem] leading-none font-semibold tracking-[-0.025em] md:text-[1.9rem]">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-[15.5px] leading-[1.6] text-bone-2">{step.body}</p>
+                  <p className="mt-3 text-[16.5px] leading-[1.68] text-bone-2">{step.body}</p>
                 </div>
 
-                <p className="border-t border-rule pt-3 text-[14px] leading-[1.55] text-bone-3 md:mt-1 md:border-t-0 md:border-l md:pt-0 md:pl-6">
+                <p className="border-t border-rule pt-3 text-[15px] leading-[1.62] text-bone-3 md:mt-1 md:border-t-0 md:border-l md:pt-0 md:pl-6">
                   <span className="tag mb-2 block text-verdigris">Ends with</span>
                   {step.deliverable}
                 </p>

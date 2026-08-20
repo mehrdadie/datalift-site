@@ -30,8 +30,8 @@ export default function Testimonials() {
               >
                 <figcaption className="md:pt-2">
                   <p className="tag text-signal">{String(i + 1).padStart(2, "0")}</p>
-                  <p className="mt-3 text-[14px] leading-snug text-bone-2">{t.role}</p>
-                  <p className="text-[14px] leading-snug text-bone-3">{t.org}</p>
+                  <p className="mt-3 text-[15px] leading-snug text-bone-2">{t.role}</p>
+                  <p className="text-[15px] leading-snug text-bone-3">{t.org}</p>
                 </figcaption>
 
                 <blockquote className="font-display text-[clamp(1.2rem,2.3vw,1.65rem)] leading-[1.32] font-medium tracking-[-0.015em] text-bone">

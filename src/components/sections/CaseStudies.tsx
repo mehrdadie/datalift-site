@@ -48,15 +48,15 @@ export default function CaseStudies() {
                   <div className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
                     <div>
                       <h3 className="tag border-t border-rule-2 pt-3">Problem</h3>
-                      <p className="mt-3 text-[15px] leading-[1.6] text-bone-2">{cs.problem}</p>
+                      <p className="mt-3 text-[16px] leading-[1.68] text-bone-2">{cs.problem}</p>
                     </div>
                     <div>
                       <h3 className="tag border-t border-rule-2 pt-3">What changed</h3>
-                      <p className="mt-3 text-[15px] leading-[1.6] text-bone-2">{cs.change}</p>
+                      <p className="mt-3 text-[16px] leading-[1.68] text-bone-2">{cs.change}</p>
                     </div>
                     <div className="sm:col-span-2">
                       <h3 className="tag border-t border-rule-2 pt-3 text-signal">Outcome</h3>
-                      <p className="mt-3 max-w-2xl text-[16px] leading-[1.6]">{cs.outcome}</p>
+                      <p className="mt-3 max-w-2xl text-[16px] leading-[1.68]">{cs.outcome}</p>
                     </div>
                   </div>
 

@@ -109,7 +109,7 @@ export function CustomerVisual() {
         ].map((tile) => (
           <div key={tile.k} className="bg-ground px-3 py-3">
             <p className="tag">{tile.k}</p>
-            <p className="mt-2 font-mono text-[14px] text-bone">{tile.v}</p>
+            <p className="mt-2 font-mono text-[15px] text-bone">{tile.v}</p>
           </div>
         ))}
       </div>
@@ -122,7 +122,7 @@ export function CustomerVisual() {
           >
             <span aria-hidden className={`mt-[7px] h-1.5 w-1.5 shrink-0 ${r.tone}`} />
             <span className="tag w-[104px] shrink-0 pt-0.5">{r.src}</span>
-            <span className="text-[13.5px] leading-snug text-bone-2">{r.event}</span>
+            <span className="text-[14.5px] leading-snug text-bone-2">{r.event}</span>
             <span className="tag ml-auto hidden pt-0.5 sm:block">D+{i}</span>
           </li>
         ))}
@@ -150,7 +150,7 @@ export function AttributionVisual() {
       <ul className="space-y-3.5">
         {channels.map((c) => (
           <li key={c.name}>
-            <p className="mb-1.5 text-[13.5px] text-bone-2">{c.name}</p>
+            <p className="mb-1.5 text-[14.5px] text-bone-2">{c.name}</p>
             <div className="flex items-center gap-2">
               <div className="flex h-2.5 flex-1 justify-end bg-rule/40">
                 <div className="h-full bg-bone-3" style={{ width: `${c.spend}%` }} />
@@ -164,7 +164,7 @@ export function AttributionVisual() {
         ))}
       </ul>
 
-      <p className="mt-5 border-t border-rule pt-4 text-[13px] text-bone-3">
+      <p className="mt-5 border-t border-rule pt-4 text-[14px] text-bone-3">
         Same spend, redistributed. The channel with the largest budget was not the channel
         producing the revenue.
       </p>

@@ -21,8 +21,8 @@
   --color-pit: #0a1012;
 
   --color-bone: #ece5d9;
-  --color-bone-2: #9dabaa;
-  --color-bone-3: #6d7c7c;
+  --color-bone-2: #b4c0be;
+  --color-bone-3: #8b9997;
 
   --color-paper: #e8e1d3;
   --color-paper-2: #d6cdbb;
@@ -54,8 +54,8 @@
     background-color: var(--color-ground);
     color: var(--color-bone);
     font-family: var(--font-sans);
-    font-size: 17px;
-    line-height: 1.62;
+    font-size: 17.5px;
+    line-height: 1.68;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
@@ -130,7 +130,7 @@
   }
 
   .prose-w {
-    max-width: 66ch;
+    max-width: 64ch;
   }
 
   /* Type ------------------------------------------------------------- */
@@ -150,18 +150,32 @@
   }
 
   .lead {
-    font-size: clamp(1.0625rem, 1.35vw, 1.1875rem);
-    line-height: 1.6;
+    font-size: clamp(1.125rem, 1.4vw, 1.28rem);
+    line-height: 1.62;
+    color: var(--color-bone-2);
+  }
+
+  /* Running copy inside sections — one size, set once, instead of a dozen
+     slightly different pixel values scattered through the components. */
+  .copy {
+    font-size: 16.5px;
+    line-height: 1.68;
+    color: var(--color-bone-2);
+  }
+
+  .copy-sm {
+    font-size: 15.5px;
+    line-height: 1.62;
     color: var(--color-bone-2);
   }
 
   /* One mono system for every label, figure and tag on the page. */
   .tag {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 1;
-    letter-spacing: 0.13em;
+    line-height: 1.35;
+    letter-spacing: 0.085em;
     text-transform: uppercase;
     color: var(--color-bone-3);
   }
@@ -170,9 +184,9 @@
      carries its own index — the page reads as a numbered document. */
   .marker {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-signal);
   }
@@ -208,11 +222,11 @@
     align-items: center;
     justify-content: center;
     gap: 9px;
-    height: 48px;
-    padding-inline: 22px;
+    height: 50px;
+    padding-inline: 24px;
     border-radius: 3px;
     font-family: var(--font-mono);
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -251,12 +265,12 @@
   .chip {
     display: inline-flex;
     align-items: center;
-    height: 26px;
-    padding-inline: 9px;
+    height: 28px;
+    padding-inline: 10px;
     border: 1px solid var(--color-rule);
     font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.07em;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--color-bone-2);
   }
@@ -268,13 +282,15 @@
     --color-ground: var(--color-paper);
     --color-panel: rgba(20, 28, 31, 0.035);
     --color-bone: var(--color-graphite);
-    --color-bone-2: #4c5a5c;
-    --color-bone-3: #7e8a89;
+    --color-bone-2: #3d4a4c;
+    --color-bone-3: #54615f;
     --color-rule: var(--color-rule-ink);
     --color-rule-2: rgba(20, 28, 31, 0.32);
-    --color-signal: #a86a12;
-    --color-verdigris: #3f7a5d;
-    --color-oxide: #b34a22;
+    /* Darker on paper than on the dark ground: the same amber that reads at
+       8:1 on #0f1518 only manages 3.4:1 here, which fails at label sizes. */
+    --color-signal: #8a5209;
+    --color-verdigris: #35664e;
+    --color-oxide: #a33f19;
 
     background-color: var(--color-paper);
     color: var(--color-graphite);

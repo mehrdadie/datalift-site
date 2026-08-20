@@ -8,13 +8,13 @@ export default function Footer() {
           <p className="font-display text-[17px] font-semibold tracking-[-0.01em] text-bone">
             {profile.name}
           </p>
-          <p className="mt-2 max-w-xs text-[14px] leading-snug text-bone-3">{profile.role}</p>
+          <p className="mt-2 max-w-xs text-[15px] leading-snug text-bone-3">{profile.role}</p>
         </div>
 
         <nav aria-label="Footer" className="flex flex-col gap-3 md:items-end">
           <a
             href={`mailto:${profile.email}`}
-            className="font-mono text-[13px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
+            className="font-mono text-[14px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
           >
             {profile.email}
           </a>
@@ -22,7 +22,7 @@ export default function Footer() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="font-mono text-[13px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
+            className="font-mono text-[14px] tracking-[0.04em] text-bone-2 transition-colors hover:text-signal"
           >
             LinkedIn
           </a>
@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-rule">
-        <div className="shell flex flex-col gap-2 py-6 text-[13px] text-bone-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="shell flex flex-col gap-2 py-6 text-[14px] text-bone-3 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {profile.name}</p>
           <p>{profile.location}</p>
         </div>

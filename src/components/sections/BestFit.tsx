@@ -18,14 +18,12 @@ export default function BestFit() {
             <div>
               <p className="tag border-b border-rule-2 pb-3 text-verdigris">Best fit if you</p>
               <ul>
-                {bestFit.items.map((item, i) => (
+                {bestFit.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-baseline gap-5 border-b border-rule py-4 text-[15.5px] text-bone transition-colors hover:text-signal"
+                    className="flex items-start gap-4 border-b border-rule py-4 text-[17px] leading-[1.5] text-bone"
                   >
-                    <span className="font-mono text-[11px] tracking-[0.14em] text-bone-3 tabular-nums">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 bg-signal" />
                     {item}
                   </li>
                 ))}
@@ -40,9 +38,12 @@ export default function BestFit() {
                 {bestFit.notFit.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-baseline gap-5 border-b border-rule py-4 text-[15px] text-bone-3"
+                    className="flex items-start gap-4 border-b border-rule py-4 text-[16px] leading-[1.5] text-bone-2"
                   >
-                    <span aria-hidden className="h-px w-3 shrink-0 translate-y-[-4px] bg-oxide" />
+                    <span
+                      aria-hidden
+                      className="mt-[9px] h-[7px] w-[7px] shrink-0 border border-oxide"
+                    />
                     {item}
                   </li>
                 ))}

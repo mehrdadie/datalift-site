@@ -95,25 +95,16 @@ export const journey = {
 
 export const platforms = {
   title: "I work across the full business data chain.",
-  note: "Sixteen of the platforms these problems usually live in.",
-  /** Grouped by where each one sits in the chain, not alphabetically. */
-  items: [
-    { name: "Salesforce", kind: "CRM" },
-    { name: "GoHighLevel", kind: "CRM" },
-    { name: "HubSpot", kind: "CRM" },
-    { name: "Pipedrive", kind: "CRM" },
-    { name: "Google Ads", kind: "Acquisition" },
-    { name: "Meta Ads", kind: "Acquisition" },
-    { name: "LinkedIn Ads", kind: "Acquisition" },
-    { name: "GA4", kind: "Analytics" },
-    { name: "PostHog", kind: "Analytics" },
-    { name: "Aircall", kind: "Calls" },
-    { name: "Stripe", kind: "Payments" },
-    { name: "Chargebee", kind: "Payments" },
-    { name: "BigQuery", kind: "Warehouse" },
-    { name: "Supabase", kind: "Warehouse" },
-    { name: "Power BI", kind: "Reporting" },
-    { name: "n8n", kind: "Automation" },
+  note: "Grouped by where each one sits in the chain.",
+  groups: [
+    { kind: "CRM", items: ["Salesforce", "GoHighLevel", "HubSpot", "Pipedrive"] },
+    { kind: "Acquisition", items: ["Google Ads", "Meta Ads", "LinkedIn Ads"] },
+    { kind: "Analytics", items: ["GA4", "PostHog"] },
+    { kind: "Calls", items: ["Aircall"] },
+    { kind: "Payments", items: ["Stripe", "Chargebee"] },
+    { kind: "Warehouse", items: ["BigQuery", "Supabase", "PostgreSQL"] },
+    { kind: "Reporting", items: ["Power BI"] },
+    { kind: "Automation", items: ["n8n", "Python", "Webhooks"] },
   ],
 } as const
 
@@ -251,23 +242,30 @@ export const caseStudies = [
   },
 ] as const
 
+/**
+ * Positioning, argued rather than asserted. Four specialists each own a
+ * territory; the failures live in the seams between them, and nobody is paid
+ * to own a seam. The bracket spanning all four in the UI is the claim.
+ */
 export const positioning = {
   titleLead: "Most specialists work inside one system.",
   titleAccent: "I work between them.",
   body:
-    "The value is not in another dashboard or another automation. It is in connecting the entire business journey — from the first click to the invoice, and back into the decision that follows.",
-  centre: ["Connected", "Business System"],
-  satellites: [
-    "Marketing",
-    "CRM",
-    "Sales",
-    "Calls",
-    "Payments",
-    "Customer",
-    "Operations",
-    "AI",
-    "Reporting",
+    "Every one of these people is good at their job. None of them is responsible for what happens in the gap after it.",
+  territories: [
+    { owner: "A paid media agency", scope: "Ad platforms, campaigns, budget, creative" },
+    { owner: "A CRM consultant", scope: "Objects, fields, pipelines, automation rules" },
+    { owner: "A RevOps hire", scope: "Process, stages, forecasting, sales discipline" },
+    { owner: "A BI contractor", scope: "Dashboards, models, definitions, reporting" },
   ],
+  /** One fewer than the territories — a seam sits between each adjacent pair. */
+  seams: [
+    "Campaign data lands in the CRM with the source stripped out.",
+    "A pipeline stage means one thing to sales and another to the model.",
+    "The dashboard reports revenue nobody can trace back to a campaign.",
+  ],
+  closer: "Nobody is hired to own a seam. That is the part I take.",
+  bracketLabel: "My scope",
 } as const
 
 export const capabilities = [
