@@ -131,7 +131,7 @@ export default function Architecture() {
                     <span
                       aria-hidden
                       className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                        active === s.id ? "bg-signal" : "bg-ink-3"
+                        active === s.id ? "bg-signal" : "bg-bone-3"
                       }`}
                     />
                   </button>

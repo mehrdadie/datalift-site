@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="top" className="relative overflow-hidden pt-[124px] pb-16 md:pt-[152px] md:pb-24">
       <div className="shell">
         <Reveal>
-          <p className="marker">Data · Automation · Growth systems</p>
+          <p className="marker">{hero.eyebrow}</p>
         </Reveal>
 
         <div className="mt-8 grid items-start gap-14 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-10">

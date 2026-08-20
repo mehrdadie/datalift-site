@@ -22,7 +22,7 @@ export const nav = [
 ] as const
 
 export const hero = {
-  eyebrow: "Independent Data, Automation & Growth Systems Consultant",
+  eyebrow: "Data · Automation · Growth systems",
   headingLead: "I connect the systems",
   headingAccent: "behind your business.",
   body:
