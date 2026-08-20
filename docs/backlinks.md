@@ -161,6 +161,53 @@ Get it updated to point at the new domain.
 
 ---
 
+## Worth small money (and what is not)
+
+### The rule
+
+Nothing sold *as a backlink* is worth buying. Every legitimate paid link below is
+a by-product of something else you are actually getting — a membership, an
+audience, a tool. If the pitch is "links," walk away.
+
+Also weigh time against money honestly. A podcast appearance is free and worth
+more than any directory. If your hourly rate is meaningful, a £50/year fee that
+saves you two hours is cheap and a £20 link package that costs you a manual
+action is not.
+
+### Legitimate, low cost
+
+| Option | What you actually get | Verdict |
+|---|---|---|
+| **Professional body membership** (BCS, Institute of Analytics, industry associations) | Member directory listing, credibility marker, sometimes a profile page | Good — real organisation, real directory |
+| **Chamber of Commerce** (local) | Directory listing plus actual local networking | Good if you want local/UK clients |
+| **Niche newsletter sponsorship** | One-off placement in front of a relevant audience | Good — buy the audience, the link is a bonus |
+| **[Featured.com](https://featured.com) paid tier** | More visibility to journalists than the free tier | Reasonable once the free tier proves it works for you |
+| **Hashnode Pro** ($5/mo, $50/yr) | API access for automated cross-posting | Only if you have already decided Hashnode matters — see Tier 3 |
+| **Medium membership** ($50/yr) | Publication access and distribution | Marginal — no API either way |
+| **Conference ticket where you speak** | Speaker page, bio, link, and a room full of buyers | Best money on this list |
+
+### Not worth it
+
+| Option | Why |
+|---|---|
+| "N backlinks for £X" packages | Link scheme. Penalty risk on a new domain, zero AI value |
+| Paid guest posts on generic "DA50+" sites | Explicitly against Google guidelines; those sites exist only to sell links |
+| Mass directory submission services | Hundreds of listings nobody reads |
+| PBN access | Fastest way to lose a young domain |
+| Press release distribution | Syndicated copies, almost always nofollow, no editorial pickup |
+| Paid Clutch/GoodFirms tiers | The free listing gives you the link. Paid tiers sell leads, not links — judge them as a lead channel, separately |
+
+### The honest summary
+
+For your situation — a domain registered today, no inbound links, targeting
+founders and revenue leaders — the ranking work is **editorial mentions and real
+content**, both free. The only spend I would defend right now is a conference or
+event where you speak, because it produces a link, an audience and a case for
+your expertise at once.
+
+Revisit paid options once the site has six months of history and something to
+point at. Buying links into an empty domain is spending money to look suspicious.
+
 ## Do not bother
 
 - **Paid guest-post schemes / link packages** — Google penalises them and AI
