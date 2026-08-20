@@ -33,9 +33,22 @@ its own while on screen, pausing on hover or focus, still under reduced motion.
 When it reaches the last stop a dashed return path draws back to the first —
 revenue joined to the click that started it, which is the whole pitch.
 
-Sections deliberately do not share a template: the problems are ruled rows with
-the symptom shown as data, capabilities are columns divided by rules, feedback is
-a column of unboxed pull quotes, and best-fit is a qualification ledger.
+Sections deliberately do not share a template:
+
+- **Platforms** — a grouped spec sheet; each one labelled with where it sits in
+  the chain.
+- **Problems** — ruled rows that show each symptom as data, with the figure that
+  gives the problem away set in oxide.
+- **Positioning** — four specialists, each owning a territory, the failures named
+  in the seams between them, and a bracket down the gutter spanning all four.
+- **Capabilities** — three ruled rows with the scope running inline, not three
+  columns of bullets. Not a sequence, so no 01/02/03 markers.
+- **Client feedback** — unboxed pull quotes indenting down the page.
+- **Where I am most useful** — a two-ledger qualification sheet.
+
+Text colours are audited against both grounds; everything in use sits between
+5:1 and 14.7:1. The paper section needs its own darker accents — the amber that
+reads at 8.3:1 on the dark ground manages only 3.4:1 on bone.
 
 ## Stack
 

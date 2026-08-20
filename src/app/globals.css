@@ -134,12 +134,6 @@
   }
 
   /* Type ------------------------------------------------------------- */
-  .display-1 {
-    font-size: clamp(2.7rem, 8.2vw, 6.4rem);
-    font-variation-settings: "wdth" 106;
-    letter-spacing: -0.035em;
-  }
-
   .display-2 {
     font-size: clamp(2.05rem, 4.6vw, 3.5rem);
   }
