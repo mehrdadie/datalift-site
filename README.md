@@ -25,6 +25,14 @@ of a dark page, because proof is the part a client circulates. It sets
 `.on-paper`, which swaps the tokens locally, so every child including the SVG
 diagrams adapts without a second set of styles.
 
+The hero has no illustration beside the headline. Both headline lines are 21
+characters, so above `md` the type is sized to the measure with `calc()` and set
+solid — it becomes a block rather than a ragged paragraph. Beneath it runs the
+journey rail: one customer moving through seven systems on a ruler, advancing on
+its own while on screen, pausing on hover or focus, still under reduced motion.
+When it reaches the last stop a dashed return path draws back to the first —
+revenue joined to the click that started it, which is the whole pitch.
+
 Sections deliberately do not share a template: the problems are ruled rows with
 the symptom shown as data, capabilities are columns divided by rules, feedback is
 a column of unboxed pull quotes, and best-fit is a qualification ledger.

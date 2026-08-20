@@ -32,31 +32,66 @@ export const hero = {
   trust: "Available for selected consulting and implementation projects.",
 } as const
 
-/** Nodes for the hero systems visualisation. Coordinates are on a 0–100 grid. */
-export const heroNodes = [
-  { id: "marketing", label: "Marketing", x: 17, y: 13 },
-  { id: "crm", label: "CRM", x: 50, y: 8 },
-  { id: "sales", label: "Sales", x: 84, y: 17 },
-  { id: "calls", label: "Calls", x: 13, y: 47 },
-  { id: "data", label: "Data", x: 50, y: 50 },
-  { id: "payments", label: "Payments", x: 86, y: 52 },
-  { id: "reporting", label: "Reporting", x: 22, y: 85 },
-  { id: "automation", label: "Automation", x: 76, y: 87 },
-] as const
-
-export const heroEdges = [
-  ["marketing", "data"],
-  ["crm", "data"],
-  ["sales", "data"],
-  ["calls", "data"],
-  ["payments", "data"],
-  ["data", "reporting"],
-  ["data", "automation"],
-  ["marketing", "crm"],
-  ["crm", "sales"],
-  ["sales", "payments"],
-  ["reporting", "automation"],
-] as const
+/**
+ * The hero rail: one customer's journey across seven systems, in order, with
+ * the time each step actually took. The last stop closes the loop — revenue
+ * joined back to the click that started it. That loop is the whole pitch.
+ */
+export const journey = {
+  label: "One customer. Seven systems. Nine days.",
+  note: "An ordinary journey, and every handoff where it usually breaks.",
+  stops: [
+    {
+      id: "click",
+      system: "Meta Ads",
+      event: "Campaign click",
+      detail: "Source, campaign and cost captured before the form is even opened.",
+      t: "T+0",
+    },
+    {
+      id: "form",
+      system: "GoHighLevel",
+      event: "Form submitted",
+      detail: "Lead created with the acquisition source still attached to it.",
+      t: "T+2m",
+    },
+    {
+      id: "route",
+      system: "Salesforce",
+      event: "Owner assigned",
+      detail: "Routed on region and expected value, not on who is next in the list.",
+      t: "T+3m",
+    },
+    {
+      id: "call",
+      system: "Aircall",
+      event: "First call connected",
+      detail: "4m 12s, outcome logged against the record rather than a spreadsheet.",
+      t: "T+11m",
+    },
+    {
+      id: "opp",
+      system: "Salesforce",
+      event: "Opportunity created",
+      detail: "£14,400 at proposal stage, with the full call history behind it.",
+      t: "T+2d",
+    },
+    {
+      id: "paid",
+      system: "Stripe",
+      event: "Payment collected",
+      detail: "Annual plan, first invoice settled, subscription state synced back.",
+      t: "T+9d",
+    },
+    {
+      id: "report",
+      system: "Power BI",
+      event: "Revenue attributed",
+      detail: "£14,400 joined back to the click that started it. The loop closes.",
+      t: "T+9d",
+    },
+  ],
+} as const
 
 export const platforms = {
   title: "I work across the full business data chain.",
