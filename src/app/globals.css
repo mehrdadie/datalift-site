@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Palette: instrument panel, not SaaS dashboard.
+   Palette: Core-X Premium — luxury dark with refined gold accents.
 
-   A deep slate-teal ground rather than black, bone-coloured type rather than
-   blue-white, and three accents that each carry one fixed meaning:
+   A deep core-black ground with cream-bone type, and three accents that each
+   carry one fixed meaning:
 
-     signal    amber      live, connected, the action to take
+     signal    gold       live, connected, the action to take
      oxide     burnt red  the broken state, the "before", the disagreement
      verdigris muted green  resolved, reconciled, the outcome
 
@@ -14,29 +14,29 @@
    ───────────────────────────────────────────────────────────────────────── */
 
 @theme {
-  --color-ground: #0f1518;
-  --color-ground-2: #131c1f;
-  --color-panel: #182226;
-  --color-panel-2: #1e2a2e;
-  --color-pit: #0a1012;
+  --color-ground: #1a1a1a;
+  --color-ground-2: #242424;
+  --color-panel: #222222;
+  --color-panel-2: #2a2a2a;
+  --color-pit: #0d0d0d;
 
-  --color-bone: #ece5d9;
-  --color-bone-2: #b4c0be;
-  --color-bone-3: #8b9997;
+  --color-bone: #faf8f3;
+  --color-bone-2: #d4d4d0;
+  --color-bone-3: #a8a8a4;
 
-  --color-paper: #e8e1d3;
-  --color-paper-2: #d6cdbb;
-  --color-graphite: #141c1f;
+  --color-paper: #f5f3ed;
+  --color-paper-2: #e8e5dd;
+  --color-graphite: #1a1a1a;
 
-  --color-rule: rgba(236, 229, 217, 0.13);
-  --color-rule-2: rgba(236, 229, 217, 0.26);
-  --color-rule-ink: rgba(20, 28, 31, 0.16);
+  --color-rule: rgba(250, 248, 243, 0.12);
+  --color-rule-2: rgba(250, 248, 243, 0.24);
+  --color-rule-ink: rgba(26, 26, 26, 0.18);
 
-  --color-signal: #e5a03c;
-  --color-signal-hi: #f3b558;
-  --color-signal-soft: rgba(229, 160, 60, 0.12);
+  --color-signal: #d4af37;
+  --color-signal-hi: #e8c547;
+  --color-signal-soft: rgba(212, 175, 55, 0.12);
   --color-oxide: #d9673c;
-  --color-verdigris: #8fb8a3;
+  --color-verdigris: #6b9b82;
 
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
@@ -274,16 +274,16 @@
      swapped tokens, so nothing needs a light-mode variant of its own. */
   .on-paper {
     --color-ground: var(--color-paper);
-    --color-panel: rgba(20, 28, 31, 0.035);
+    --color-panel: rgba(26, 26, 26, 0.04);
     --color-bone: var(--color-graphite);
-    --color-bone-2: #3d4a4c;
-    --color-bone-3: #54615f;
+    --color-bone-2: #4a4a48;
+    --color-bone-3: #6d6d6a;
     --color-rule: var(--color-rule-ink);
-    --color-rule-2: rgba(20, 28, 31, 0.32);
-    /* Darker on paper than on the dark ground: the same amber that reads at
-       8:1 on #0f1518 only manages 3.4:1 here, which fails at label sizes. */
-    --color-signal: #8a5209;
-    --color-verdigris: #35664e;
+    --color-rule-2: rgba(26, 26, 26, 0.32);
+    /* Darker gold on paper than on the dark ground: the premium gold that
+       reads at 8:1 on #1a1a1a only manages ~4:1 here, so we deepen it. */
+    --color-signal: #996622;
+    --color-verdigris: #4a7b5f;
     --color-oxide: #a33f19;
 
     background-color: var(--color-paper);
