@@ -209,6 +209,82 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: "connector-cost-optimisation",
+    featured: true,
+    outcome: "Cost",
+    metric: "~$10k",
+    metricUnit: "saved annually",
+    title: "Replacing Paid Data Connectors",
+    sector: "International training and subscription business",
+    problem: "Recurring third-party connector fees added cost to reporting across Salesforce and multiple advertising platforms.",
+    change: "Built and maintained direct API integrations using Google Apps Script to retrieve and standardise data from Salesforce, Meta Ads, Google Ads and LinkedIn Ads, reducing dependency on paid extraction tools such as Supermetrics.",
+    outcomeText: "Replaced recurring connector subscriptions with owned, maintainable data pipelines, saving approximately $10,000 per year while keeping the reporting data available.",
+    results: [
+      { value: "~$10k", label: "Annual connector savings" },
+      { value: "4", label: "Major platforms integrated" },
+      { value: "Direct API", label: "Instead of paid connectors" },
+    ],
+    stack: ["Google Apps Script", "Salesforce", "Meta Ads", "Google Ads", "LinkedIn Ads"],
+    visual: "matrix",
+  },
+  {
+    id: "automation-cost-optimisation",
+    featured: true,
+    outcome: "Cost",
+    metric: "~200k",
+    metricUnit: "Zapier tasks migrated",
+    title: "Moving High-Volume Automation to n8n",
+    sector: "International training and subscription business",
+    problem: "Growing task volume on Zapier increased reliance on usage-based automation fees and made workflow costs harder to control.",
+    change: "Rebuilt existing Zapier flows in self-hosted n8n, retaining integrations and business logic while bringing execution and infrastructure under direct control.",
+    outcomeText: "Migrated workflows representing approximately 200,000 Zapier task executions, reducing exposure to per-task charges. A specific annual dollar saving has not been independently established.",
+    results: [
+      { value: "~200k", label: "Task executions migrated" },
+      { value: "Self-hosted", label: "n8n automation" },
+      { value: "Lower", label: "Usage-based fee exposure" },
+    ],
+    stack: ["n8n", "Zapier", "APIs", "Webhooks"],
+    visual: "workflow",
+  },
+  {
+    id: "dashboard-licensing-optimisation",
+    featured: false,
+    outcome: "Cost",
+    metric: "~50",
+    metricUnit: "dashboard users",
+    title: "Custom Dashboards Instead of Viewer Licences",
+    sector: "International training and subscription business",
+    problem: "Providing reporting access through individual Power BI viewer licences added recurring cost and limited how access could be tailored by team or role.",
+    change: "Built a role-based JavaScript dashboard for approximately 50 users, with controlled access to operational KPIs and reporting views, hosted on a DigitalOcean server.",
+    outcomeText: "Reduced dependence on paid viewer licences by delivering reporting through a custom web application. Hosting cost was approximately $24 per month; net savings depend on licence and operating costs.",
+    results: [
+      { value: "~50", label: "Dashboard users" },
+      { value: "$24/mo", label: "Server hosting cost" },
+      { value: "Role-based", label: "Reporting access" },
+    ],
+    stack: ["JavaScript", "Power BI", "DigitalOcean", "APIs"],
+    visual: "customer",
+  },
+  {
+    id: "subscription-lifecycle-and-crm",
+    featured: false,
+    outcome: "Revenue",
+    metric: "~20%",
+    metricUnit: "CLV & ROI improvement",
+    title: "Subscription Intelligence & Historical CRM Data",
+    sector: "Training and subscription business",
+    problem: "Subscription retention, customer lifetime value and historical CRM activity were difficult to analyse consistently, while long-term records put pressure on Salesforce data-storage costs.",
+    change: "Developed customer lifecycle and subscription analysis, unified payment and CRM records, and built a historical data-access layer outside expensive Salesforce record storage while keeping older customer information available.",
+    outcomeText: "Analytics and operational initiatives supported approximately 20% improvement in subscription customer lifetime value and ROI. Moving historical records out of primary CRM storage also reduced reliance on paid Salesforce storage expansion; monetary storage savings were not quantified.",
+    results: [
+      { value: "~20%", label: "CLV and subscription ROI improvement" },
+      { value: "External", label: "Historical CRM archive" },
+      { value: "Ongoing", label: "Access to legacy records" },
+    ],
+    stack: ["Salesforce", "Chargebee", "Stripe", "BigQuery", "Power BI"],
+    visual: "dormant",
+  },
+  {
     id: "reporting-automation",
     featured: true,
     outcome: "Time",
@@ -406,14 +482,14 @@ export const featuredCaseStudies = caseStudies.filter((c) => c.featured)
 
 export const caseStudiesPage = {
   eyebrow: "Case studies",
-  title: "Eight problems, and what I did about them.",
+  title: "Real projects. Measurable business impact.",
   intro:
     "Engagements I have taken on, each tagged with the outcome it was judged against. Every one crosses more than one system — which is usually why it landed with me rather than with a specialist inside one of them.",
   /** Separate from `intro`: search engines truncate past ~160 characters. */
   metaDescription:
-    "Eight engagements in revenue operations, attribution and CRM data quality — the problem, the work, and what changed. Each one crosses several systems.",
+    "Data engineering, BI and RevOps case studies showing cost savings, automation, subscription growth and end-to-end reporting.",
   disclosure:
-    "Client names are withheld under confidentiality, so each engagement is identified by sector. Everything else — the problem, the work and the result — is as it happened.",
+    "Client names are withheld under confidentiality, so each engagement is identified by sector. Outcomes are based on project estimates and operational reporting, with approximate figures labelled accordingly.",
   indexLabel: "On this page",
 } as const
 
