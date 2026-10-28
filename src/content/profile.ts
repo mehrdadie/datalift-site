@@ -5,7 +5,7 @@
 
 export const profile = {
   name: "Mehrdad Fashami",
-  role: "Independent Data, Automation & Revenue Operations Consultant",
+  role: "End-to-End Data, BI & Revenue Operations Consultant",
   shortRole: "Independent Consultant",
   email: "hello@mehrdadfashami.com",
   linkedin: "https://www.linkedin.com/in/mehrdadfashami/",
@@ -24,11 +24,11 @@ export const nav = [
 ] as const
 
 export const hero = {
-  eyebrow: "Data · Automation · Reporting",
-  headingLead: "I connect the systems",
-  headingAccent: "behind your business.",
+  eyebrow: "Data Engineering · Analytics · Automation",
+  headingLead: "I build the data systems",
+  headingAccent: "that drive your business.",
   body:
-    "Data, CRM, marketing, sales and operations — connected into one system that gives you clearer decisions, better visibility and less manual work.",
+    "From data collection and CRM integration to cloud warehouses, automated workflows and executive dashboards, I design and build end-to-end solutions that turn complex business data into measurable results.",
   primaryCta: { label: "Discuss a project", href: "#contact" },
   secondaryCta: { label: "See selected work", href: "#work" },
   trust: "Taking on new work.",
@@ -96,7 +96,7 @@ export const journey = {
 } as const
 
 export const platforms = {
-  title: "I work across the full business data chain.",
+  title: "End-to-end data services, across your existing stack.",
   note: "Grouped by where each one sits in the chain.",
   groups: [
     { kind: "CRM", items: ["Salesforce", "GoHighLevel", "HubSpot", "Pipedrive"] },
@@ -105,14 +105,14 @@ export const platforms = {
     { kind: "Calls", items: ["Aircall"] },
     { kind: "Payments", items: ["Stripe", "Chargebee"] },
     { kind: "Warehouse", items: ["BigQuery", "Supabase", "PostgreSQL"] },
-    { kind: "Reporting", items: ["Power BI"] },
-    { kind: "Automation", items: ["n8n", "Python", "Webhooks"] },
+    { kind: "Reporting", items: ["Power BI", "Looker Studio", "Apache Superset", "Custom Dashboards"] },
+    { kind: "Automation", items: ["n8n", "Apps Script", "Python", "Webhooks"] },
   ],
 } as const
 
 export const problems = {
-  titleLead: "Businesses rarely have a data problem.",
-  titleAccent: "They have a connection problem.",
+  titleLead: "Business data should create value.",
+  titleAccent: "Not more manual work.",
   subtitle:
     "The biggest issues usually happen between systems, teams and reporting processes.",
   /**
@@ -423,10 +423,10 @@ export const caseStudiesPage = {
  * to own a seam. The bracket spanning all four in the UI is the claim.
  */
 export const positioning = {
-  titleLead: "Most specialists work inside one system.",
-  titleAccent: "I work between them.",
+  titleLead: "From raw data to business decisions.",
+  titleAccent: "I own the full journey.",
   body:
-    "Every one of these people is good at their job. None of them is responsible for what happens in the gap after it.",
+    "My work spans data engineering, business intelligence, revenue operations and automation, from the first API connection to the decisions made from the final dashboard.",
   territories: [
     { owner: "A paid media agency", scope: "Ad platforms, campaigns, budget, creative" },
     { owner: "A CRM consultant", scope: "Objects, fields, pipelines, automation rules" },
@@ -439,7 +439,7 @@ export const positioning = {
     "A pipeline stage means one thing to sales and another to the model.",
     "The dashboard reports revenue nobody can trace back to a campaign.",
   ],
-  closer: "Nobody is hired to own a seam. That is the part I take.",
+  closer: "I bring these disciplines together into one accountable, end-to-end delivery.",
   bracketLabel: "My scope",
 } as const
 
@@ -447,14 +447,14 @@ export const capabilities = [
   {
     key: "connect",
     title: "Connect",
-    description: "Connect the platforms your business already relies on.",
+    description: "Build reliable data foundations across CRM, advertising, payments and operations.",
     items: [
       "APIs and webhooks",
       "CRM integrations",
-      "Data pipelines",
-      "Data warehouses",
+      "ETL / ELT pipelines",
+      "BigQuery and cloud data warehouses",
       "CRM data quality",
-      "System architecture",
+      "Historical CRM data and archiving",
       "Payment integrations",
       "Marketing platform integrations",
     ],
@@ -462,15 +462,15 @@ export const capabilities = [
   {
     key: "understand",
     title: "Understand",
-    description: "Turn disconnected activity into attribution and reporting you can trust.",
+    description: "Model the data, define meaningful KPIs and make performance visible to every team.",
     items: [
-      "Business intelligence",
+      "Power BI, Looker Studio and Superset",
       "Revenue attribution",
       "Lead-to-revenue reporting",
       "Marketing analytics",
       "Customer journey analysis",
       "Sales reporting",
-      "Executive dashboards",
+      "Executive and custom web dashboards",
       "Funnel analytics",
     ],
   },
@@ -478,9 +478,9 @@ export const capabilities = [
     key: "automate",
     title: "Automate",
     description:
-      "Remove repetitive work and automate the processes that should not be manual.",
+      "Replace expensive manual processes and disconnected tools with scalable automation.",
     items: [
-      "Operational workflows",
+      "Self-hosted n8n and Zapier migration",
       "CRM automation",
       "AI workflows",
       "Data validation",
@@ -492,10 +492,10 @@ export const capabilities = [
 ] as const
 
 export const architecture = {
-  titleLead: "From disconnected tools",
-  titleAccent: "to one working system.",
+  titleLead: "From source data",
+  titleAccent: "to actionable business outcomes.",
   body:
-    "Every engagement ends up looking like some version of this. The names change; the shape rarely does.",
+    "I cover the full lifecycle: collect, validate, store, transform, model, visualise and automate. The result is dependable data that supports faster decisions and better operations.",
   sources: [
     { id: "google-ads", label: "Google Ads", note: "Spend, campaigns, clicks" },
     { id: "meta-ads", label: "Meta Ads", note: "Spend, campaigns, creative" },
@@ -509,19 +509,19 @@ export const architecture = {
     {
       id: "data-layer",
       label: "Data layer",
-      note: "One warehouse. Deduplicated, standardised, identity-resolved, versioned.",
+      note: "Ingestion, ETL/ELT, BigQuery, historical storage, validation and modelled data.",
     },
     {
       id: "business-logic",
       label: "Business logic",
-      note: "Agreed KPI definitions, attribution rules, segments and thresholds.",
+      note: "Consistent KPI definitions, customer identity, revenue attribution and sales logic.",
     },
   ],
   outputs: [
     {
       id: "dashboard",
       label: "Dashboard",
-      note: "Executive, marketing, sales, revenue and customer journey reporting.",
+      note: "Power BI, Looker Studio, Superset and custom dashboards for operations and leadership.",
       children: ["Executive view", "Marketing performance", "Sales performance", "Revenue attribution"],
     },
     {
@@ -536,7 +536,7 @@ export const architecture = {
 export const approach = {
   title: "How I work",
   subtitle:
-    "Four stages. Each one ends with something you can see, use or hand to your team.",
+    "From discovery and data architecture to implementation, reporting and ongoing optimisation.",
   steps: [
     {
       n: "01",
@@ -570,20 +570,20 @@ export const approach = {
 } as const
 
 export const about = {
-  title: "Independent by design.",
+  title: "End-to-end data expertise. Hands-on delivery.",
   paragraphs: [
-    "I work directly with businesses that need senior-level data, analytics and automation capability without building another internal department.",
-    "My work combines business intelligence, marketing analytics, CRM architecture, automation and system integration.",
-    "I am most useful when the problem crosses multiple platforms, teams or data sources and needs someone who can understand both the business problem and the technical implementation.",
+    "I am a hands-on data, BI and revenue operations consultant with four years of cross-functional delivery for an international training and subscription business, alongside broader experience building data-driven solutions.",
+    "I have worked across Salesforce, GoHighLevel, BigQuery, Power BI, Google and Meta Ads, Stripe, Chargebee, Aircall and n8n, owning the journey from integrations and data quality to executive reporting and operational workflows.",
+    "My work has included replacing paid data connectors with Apps Script pipelines, migrating high-volume Zapier automations to self-hosted n8n, building custom dashboards, and improving subscription and marketing performance through clearer customer and revenue data.",
   ],
   tags: [
-    "Data & BI",
+    "Data Engineering & BI",
     "Marketing Analytics",
     "Revenue Operations",
     "CRM",
     "Automation",
     "AI Workflows",
-    "System Integration",
+    "End-to-End Data Services",
   ],
   facts: [
     { label: "Engagement", value: "Fixed scope, retainer or implementation + support" },
@@ -631,7 +631,7 @@ export const testimonials = [
 export const bestFit = {
   title: "Where I am most useful",
   intro:
-    "I work best with growing businesses where operational complexity has started to outgrow spreadsheets and disconnected tools.",
+    "I support companies that need a practical partner across the entire data lifecycle, from system integration and data modelling to dashboards, automation and measurable business improvements.",
   items: [
     "You use several SaaS platforms that do not talk to each other",
     "You have meaningful lead or customer volume",
@@ -639,10 +639,10 @@ export const bestFit = {
     "You need better visibility across departments",
     "You have recurring processes worth automating",
     "You need reliable marketing-to-revenue reporting",
-    "You want one person to own the problem end-to-end",
+    "You need end-to-end data delivery without hiring a full internal team",
     "Your problem crosses more than one system",
   ],
-  highlight: "Best suited to projects where the problem crosses more than one system.",
+  highlight: "From data infrastructure to better commercial decisions.",
   notFit: {
     title: "Probably not a fit",
     items: [
@@ -654,10 +654,10 @@ export const bestFit = {
 } as const
 
 export const finalCta = {
-  headline: "Have a messy system?",
-  sub: "That is usually where I can help.",
+  headline: "Need your data to work harder?",
+  sub: "I can build the full solution.",
   body:
-    "Tell me what is not working, what is still manual, or what you cannot currently see clearly. If it is not something I should take on, I will tell you that too.",
+    "Whether you need dependable data pipelines, CRM optimisation, better reporting or automation, I can help design, build and improve the solution from end to end.",
   primary: "Discuss a project",
   secondary: "Email me",
   prompts: [
